@@ -20,17 +20,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module RegBit(Out, In, WriteEn, Rst, Clk);
+module RegBit(Out, In, WriteEn, Flush, Rst, Clk);
     output Out;
     
     input Rst, Clk;
-    input In, WriteEn;
+    input In, WriteEn, Flush;
     
-    wire OrOut, AndOut1, AndOut2;
+    reg OrOut, AndOut1, AndOut2;
     
-    assign AndOut1 = Out & !(WriteEn);
-    assign AndOut2 = In & WriteEn;
-    assign OrOut = AndOut1 | AndOut2;
+    initial begin                       //did this because i feel like flushing is a lot easier this way
+        AndOut1 = Out & !(WriteEn);
+        AndOut2 = In & WriteEn;
+        OrOut = AndOut1 | AndOut2;
+        if (Flush == 1) begin
+            OrOut = 0;
+        end
+    end
     
     D_FlipFlop D_FF1(Out, OrOut, Rst, Clk);
     

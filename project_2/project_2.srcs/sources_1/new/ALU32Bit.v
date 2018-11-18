@@ -27,7 +27,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module ALU32Bit(A, B, ShamtControl, ALUControl, MSBALUResult,
-        LSBALUResult, Zero, Overflow);
+        LSBALUResult, Zero);
 
     input [31:0] A, B;	    // inputs
 	input [4:0] ALUControl; // control bits for ALU operation
@@ -35,7 +35,7 @@ module ALU32Bit(A, B, ShamtControl, ALUControl, MSBALUResult,
 	
 	output reg [31:0] MSBALUResult, LSBALUResult;
     output reg Zero;        // Zero=1 if ALUResult == 0 (implemented at bottom)
-	output reg Overflow;
+	//output reg Overflow;
 	
 	reg [63:0] temp1;
 	reg [31:0] tempB;
@@ -47,7 +47,7 @@ module ALU32Bit(A, B, ShamtControl, ALUControl, MSBALUResult,
         MSBALUResult = {32{1'b0}};
         LSBALUResult = {32{1'b0}};
         Zero = 0;
-        Overflow = 0;
+        //Overflow = 0;
         
         tempB = {32{1'b0}};
         temp1 = 64'h000000000000000000;
@@ -59,31 +59,31 @@ module ALU32Bit(A, B, ShamtControl, ALUControl, MSBALUResult,
             5'b00000: 
             begin // Add
                 // I just followed the operations shown in the MIPS Instruction Reference
-                temp1 = (A[31] | A) + (B[31] | B); 
-                if (temp1[32] != temp1[31])
-                begin
-                    Overflow = 1'b1;
-                end
-                else 
-                begin
-                    Overflow = 1'b0;
-                    LSBALUResult = temp1[31:0];
-                    MSBALUResult = {32{1'b0}};
-                end
+                temp1 = (A[31] | A) + (B[31] | B);
+//                if (temp1[32] != temp1[31])
+//                begin
+//                    Overflow = 1'b1;
+//                end
+//                else 
+//                begin
+//                    Overflow = 1'b0;
+                LSBALUResult = temp1[31:0];
+                MSBALUResult = {32{1'b0}};
+//                end
             end
             5'b00001: 
             begin // Sub
                 temp1 = (A[31] | A) - (B[31] | B);
-                if (temp1[32] != temp1[31]) 
-                begin
-                    Overflow = 1'b1;
-                end
-                else 
-                begin
-                    Overflow = 1'b0;
-                    LSBALUResult = temp1[31:0];
-                    MSBALUResult = {32{1'b0}};
-                end
+//                if (temp1[32] != temp1[31]) 
+//                begin
+//                    Overflow = 1'b1;
+//                end
+//                else 
+//                begin
+//                    Overflow = 1'b0;
+                LSBALUResult = temp1[31:0];
+                MSBALUResult = {32{1'b0}};
+//                end
             end
             5'b00010: 
             begin // Mul

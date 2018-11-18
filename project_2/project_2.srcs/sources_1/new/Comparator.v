@@ -19,34 +19,54 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module Comparator(rd1, rd2, out);
+module Comparator(opcode, rt, rd1, rd2, branch);
 
     input [31:0] rd1, rd2;
-    output reg [2:0] out;
+    input [5:0] opcode;
+    input [4:0] rt;
+    output reg branch;
+    
+    wire [10:0] ID;
+    assign ID = {opcode, rt};
     
     initial begin
-        out <= 3'b000;
+        branch <= 0;
     end
     
-    always @(rd1, rd2) begin
-        if (rd1 > 0) begin
-            out <= 3'b000;
-        end
-        else if (!(rd1 > 0)) begin
-            out <= 3'b001;
-        end
-        else if (rd1 != rd2) begin
-            out <= 3'b010;
-        end
-        else if (rd1 == rd2) begin
-            out <= 3'b011;
-        end
-        else if (rd1 < 0) begin
-            out <= 3'b100;
-        end
-        else if (!(rd1 < 0)) begin
-            out <= 3'b101;
-        end
+    always @(rd1, rd2, opcode) begin
+        casex (ID)
+            11'b000111xxxxx: begin // bgtz
+                if (rd1 > 0) begin
+                    branch <= 1;
+                end
+            end
+            11'b000110xxxxx: begin // blez
+                if (rd1 <= 0) begin
+                    branch <= 1;
+                end
+            end
+            11'b00000100000: begin //bltz
+                if (rd1 < 0) begin
+                    branch <= 1;
+                end
+            end
+            11'b00000100001: begin //bgez
+                if (rd1 >= 0) begin
+                    branch <= 1;
+                end
+            end
+            11'b000101xxxxx: begin // bne
+                if (rd1 != rd2) begin
+                    branch <= 1;
+                end
+            end
+            11'b000100xxxxx: begin // beq
+                if (rd1 == rd2) begin
+                    branch <= 1;
+                end
+            end
+        endcase
+        
     end
 
 endmodule

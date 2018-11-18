@@ -20,21 +20,33 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module JALBlock(JALFlag, ALUOp, Func);
+module JumpBlock(Opcode, Func, Jump, JALCtrl);
 
-    input [2:0] ALUOp;
-    input [5:0] Func;
+    input [5:0] Opcode, Func;
     
-    output reg JALFlag;
+    output reg [1:0] Jump;
+    output reg JALCtrl;
     
-    wire [8:0] val;
-    assign val = {ALUOp, Func};
+    wire [11:0] val;
+    assign val = {Opcode, Func};
     
-    always @(val)
-    begin
-        case(val)
-            11'b000001000 : JALFlag = 1'b1;
-            default : JALFlag = 1'b0;
+    initial begin
+        Jump <= 2'b00;
+        JALCtrl <= 1'b0;
+    end
+    
+    always @(Opcode, Func) begin
+        casex(val)
+            12'b000010xxxxxx : begin //j
+                Jump <= 2'b10;
+            end
+            12'b000011xxxxxx : begin //jal
+                Jump <= 2'b10;
+                JALCtrl <= 1'b1;
+            end
+            12'b000000001000 : begin //jr
+                Jump <= 2'b01;
+            end
         endcase
     end
 endmodule

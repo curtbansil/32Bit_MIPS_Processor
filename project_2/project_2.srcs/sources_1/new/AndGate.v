@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/27/2018 11:34:56 AM
+// Create Date: 11/18/2018 12:42:12 AM
 // Design Name: 
-// Module Name: DiscardInstrBlock
+// Module Name: AndGate
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,13 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DiscardInstrBlock(Jump, DoBranch, Jr, ID_Flush, IF_Flush );
+module AndGate(inA, inB, out);
 
-    input Jump, DoBranch, Jr;
+    input inA, inB;
+    output out;
     
-    output ID_Flush, IF_Flush;
-    
-    assign IF_Flush = Jump | DoBranch | Jr;
-    assign ID_Flush = DoBranch | Jr;
+    assign out = inA & inB;
 
 endmodule

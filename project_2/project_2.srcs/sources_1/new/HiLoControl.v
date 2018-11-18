@@ -20,64 +20,61 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HiLoControl(ALUOp, Func, HLWr, HLType);
-    input [5:0] Func;
-    input [2:0] ALUOp;
+module HiLoControl(HLGo, HLWr, HLType);
+    input [3:0] HLGo;
+    
+    wire Go;
+    wire [2:0] ID;
+    assign Go = HLGo[3];
+    assign ID = HLGo[2:0];
     
     output reg [2:0] HLType;
     output reg HLWr;
-
-    wire [8:0] val;
-    assign val = {ALUOp, Func};
     
-    always @(val)
-    begin
-        casex(val)
-        9'b000010000 : // mfhi
-        begin
-            HLWr = 1'b0;
-            HLType = 3'b001;
+    always @(ID, Go) begin
+        if (Go == 1) begin
+            case(ID)
+                3'b000 : // mfhi
+                begin
+                    HLWr = 1'b0;
+                    HLType = 3'b111;
+                end
+                3'b001 : // mthi
+                begin
+                    HLWr = 1'b1;
+                    HLType = 3'b001;
+                end
+                3'b010 : // mflo
+                begin
+                    HLWr = 1'b0;
+                    HLType = 3'b110;
+                end
+                3'b011 : // mtlo
+                begin
+                    HLWr = 1'b1;
+                    HLType = 3'b000;
+                end
+                3'b100 : // madd
+                begin
+                    HLWr = 1'b1;
+                    HLType = 3'b010;
+                end
+                3'b101 : // msub
+                begin
+                    HLWr = 1'b1;
+                    HLType = 3'b011;
+                end
+                3'b110 : // mult
+                begin
+                    HLWr = 1'b1;
+                    HLType = 3'b100; 
+                end
+                3'b111 : // multu
+                begin
+                    HLWr = 1'b1;
+                    HLType = 3'b101;
+                end
+            endcase //removed mul, look at comment in hiloreg file
         end
-        9'b000010001 : // mthi
-        begin
-            HLWr = 1'b1;
-            HLType = 3'b001;
-        end
-        9'b000010010 : // mflo
-        begin
-            HLWr = 1'b0;
-            HLType = 3'b000;
-        end
-        9'b000010011 : // mtlo
-        begin
-            HLWr = 1'b1;
-            HLType = 3'b000;
-        end
-        9'b001000000 : // madd
-        begin
-            HLWr = 1'b1;
-            HLType = 3'b010;
-        end
-        9'b001000100 : // msub
-        begin
-            HLWr = 1'b1;
-            HLType = 3'b011;
-        end
-        9'b000011000 : // mult
-        begin
-            HLWr = 1'b1;
-            HLType = 3'b100; 
-        end
-        9'b000011001 : // multu
-        begin
-            HLWr = 1'b1;
-            HLType = 3'b101;
-        end
-        9'b00100010 : // mul
-        begin
-            HLWr = 1'b1;
-            HLType = 3'b110;
-        end
-        endcase
     end
 endmodule

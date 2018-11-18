@@ -13,25 +13,22 @@
 // FUNCTIONALITY:-
 ////////////////////////////////////////////////////////////////////////////////
 
-module HazardDetection(IfIdWriteEn, PCWriteEn, StallFlushIfIdRegRs, IfIdRegRt, IdExRegRt, IdExMemRead, IfIdOp);
+module HazardDetection(ID_Branch, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, IFID_WrEn, IF_PCWrite);
 
-	input [4:0] IfIdRegRt, IfIdRegRd; 
-	input [5:0] IfIdOp;
-	input IdExMemRead;
-	
-	output reg IfIdWrite, PCWrite, ControllerInp;
+    input ID_Branch, EX_MemRead;
+    input [4:0] ID_RegRs, ID_RegRt, EX_RegRt;
+    
+    output reg IFID_WrEn, IF_PCWrite;
 	
 	always @(*) begin
 		// Load-Use Hazard
-		if ((IdExMemRead) && ((IdExRegRt == IfIdRegRs) || (IdExRegRt == IfIdRegRt)) && (IfIdOp != 6'b001110) && (IfIdOp != 6'b100011)) begin //6'b001110 = xori, 6'b100011 = lw
-			IfIdWrite = 1'b0;
-			PCWrite = 1'b0;
-			ControllerInp = 1'b1;
+		if ((EX_MemRead) && ((EX_RegRt == ID_RegRs) || (EX_RegRt == ID_RegRt)) && (IfIdOp != 6'b001110) && (IfIdOp != 6'b100011)) begin //6'b001110 = xori, 6'b100011 = lw
+			IFID_WrEn = 1'b0;
+			IF_PCWrite = 1'b0;
 		end
 		else begin
-			IfIdWrite = 1'b1;
-			PCWrite = 1'b1;
-			ControllerInp = 1'b0;
+			IFID_WrEn = 1'b1;
+			IF_PCWrite = 1'b1;
 		end
 	end
     
