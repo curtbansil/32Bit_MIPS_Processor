@@ -45,7 +45,7 @@ module ProgramCounter(Address, PCResult, Stall, Reset, Clk);
         if(Reset==1'b1) 
         begin
             PCResult <= 32'h00000000;
-        end else if (Stall == 1) begin
+        end else if (Stall == 0) begin
             PCResult <= PCResult;
         end else begin
             PCResult <= Address;

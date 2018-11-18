@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/28/2018 04:21:07 PM
+// Create Date: 10/27/2018 01:54:43 PM
 // Design Name: 
-// Module Name: Reg32Bit
+// Module Name: JRBlock
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,21 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module RegBit(Out, In, WriteEn, Rst, Clk);
-    output Out;
+module JRBlock(JRFlag, ALUOp, Func);
+
+    input [4:0] ALUOp;
+    input [5:0] Func;
     
-    input Rst, Clk;
-    input In, WriteEn;
+    output reg JRFlag;
     
-    wire OrOut, AndOut1, AndOut2;
+    wire [10:0] val;
+    assign val = {ALUOp, Func};
     
-    assign AndOut1 = Out & !(WriteEn);
-    assign AndOut2 = In & WriteEn;
-    assign OrOut = AndOut1 | AndOut2;
-    
-    D_FlipFlop D_FF1(Out, OrOut, Rst, Clk);
-    
+    always @(val)
+    begin
+        case(val)
+            11'b00000001000 : JRFlag = 1'b1;
+            default : JRFlag = 1'b0;
+        endcase
+    end
 endmodule

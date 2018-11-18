@@ -2,7 +2,7 @@
 
 module Mux5Bit2To1(out, inA, inB, sel);
 
-    output reg [4:0] out;
+    output [4:0] out;
     
     input [4:0] inA, inB;
     input sel;

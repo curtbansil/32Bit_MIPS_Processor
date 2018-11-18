@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 10/28/2018 04:21:07 PM
+// Create Date: 10/16/2018 12:25:19 PM
 // Design Name: 
-// Module Name: Reg32Bit
+// Module Name: Top_tb
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,25 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module RegBit(Out, In, WriteEn, Rst, Clk);
-    output Out;
+module Top_tb();
+
+    reg Clk, Rst;
     
-    input Rst, Clk;
-    input In, WriteEn;
+    //TopModule Top(Clk, Rst);
+    SCTopModule Top(Clk, Rst);
     
-    wire OrOut, AndOut1, AndOut2;
+    initial begin
+        Clk = 0;
+        forever #50 Clk = ~Clk;
+    end
     
-    assign AndOut1 = Out & !(WriteEn);
-    assign AndOut2 = In & WriteEn;
-    assign OrOut = AndOut1 | AndOut2;
+    initial begin
+        #100;
+        Rst = 1;
+        #100;
+        Rst = 0;
+    end
     
-    D_FlipFlop D_FF1(Out, OrOut, Rst, Clk);
     
+
 endmodule

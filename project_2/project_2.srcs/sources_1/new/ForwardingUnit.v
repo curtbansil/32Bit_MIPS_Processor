@@ -30,14 +30,14 @@ module ForwardingUnit(MEM_WrReg, WB_WrReg, EX_RsAddr, EX_RtAddr,
 	// Check if MEM_WrReg is not the Zero Reg
 	assign MEM_WrRegOr = MEM_WrReg[4] | MEM_WrReg [3] | MEM_WrReg[2] | MEM_WrReg[1] | MEM_WrReg[0];
 	// Compare MEM_WrReg to EX_RsAddr
-	AddressComparator5Bit(MEM_WrRegRsComp, MEM_WrReg, EX_RsAddr);
+	AddressComparator5Bit AC1(MEM_WrRegRsComp, MEM_WrReg, EX_RsAddr);
 	// If MEM_RegWr == 1, MEM_WrRegOr == 1, MEM_WrRegRsComp == 1, then ForwardA[1] = 1
 	assign andResult1 = MEM_RegWr & MEM_WrRegOr & MEM_WrRegRsComp;
 	
 	// Check if WB_WrReg is not the Zero Reg
     assign WB_WrRegOr = WB_WrReg[4] | WB_WrReg [3] | WB_WrReg[2] | WB_WrReg[1] | WB_WrReg[0];
     // Compare WB_WrReg to EX_RsAddr
-    AddressComparator5Bit(WB_WrRegRsComp, WB_WrReg, EX_RsAddr);
+    AddressComparator5Bit AC2(WB_WrRegRsComp, WB_WrReg, EX_RsAddr);
     // If WB_RegWr == 1, WB_WrRegOr == 1, WB_WrRegRsComp == 1, then ForwardA[1] = 1
     assign andResult2 = WB_RegWr & WB_WrRegOr & WB_WrRegRsComp;
     
@@ -50,12 +50,12 @@ module ForwardingUnit(MEM_WrReg, WB_WrReg, EX_RsAddr, EX_RtAddr,
     assign ForwardAControl[0] = notAndResult1 & andResult2;
     
     // Compare MEM_WrReg to EX_RtAddr
-    AddressComparator5Bit(MEM_WrRegRtComp, MEM_WrReg, EX_RtAddr);
+    AddressComparator5Bit AC3(MEM_WrRegRtComp, MEM_WrReg, EX_RtAddr);
     // If MEM_RegWr == 1, MEM_WrRegOr == 1, MEM_WrRegRtComp == 1, then ForwardA[1] = 1
     assign andResult3 = MEM_RegWr & MEM_WrRegOr & MEM_WrRegRtComp;
     
     // Compare WB_WrReg to EX_RtAddr
-    AddressComparator5Bit(WB_WrRegRtComp, WB_WrReg, EX_RtAddr);
+    AddressComparator5Bit AC4(WB_WrRegRtComp, WB_WrReg, EX_RtAddr);
     // If WB_RegWr == 1, WB_WrRegOr == 1, WB_WrRegRtComp == 1, then ForwardA[1] = 1
     assign andResult4 = WB_RegWr & WB_WrRegOr & WB_WrRegRtComp;
     
