@@ -238,8 +238,8 @@ module TopModuleV2(Clk, Rst);
     // detection are fully functional
     
     // Forwarding muxes
-    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA, EX_ReadData1, WB_WriteData, MEM_ALUOutLSB, 1'b0);
-    Mux32Bit3To1 EX_ForwardB1(EX_WDMem, EX_ReadData2, WB_WriteData, MEM_ALUOutLSB, 1'b0);
+    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA, EX_ReadData1, WB_WriteData, MEM_ALUOutLSB, 2'b00);
+    Mux32Bit3To1 EX_ForwardB1(EX_WDMem, EX_ReadData2, WB_WriteData, MEM_ALUOutLSB, 2'b00);
     
     // ALU Logic, controller is in ID (makes it faster i think)
     Mux32Bit2To1 ALUSrcMux1(EX_ALUInB, EX_WDMem, EX_ImmExt, EX_ALUSrc);

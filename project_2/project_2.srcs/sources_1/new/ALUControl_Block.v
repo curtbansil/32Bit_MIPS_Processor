@@ -50,7 +50,7 @@ module ALUControl_Block(Func, R1, R2, shamt, ALUOp, ALUControl);
                     6'b100000: ALUControl <= 5'b00000; //add
                     6'b100001: ALUControl <= 5'b11001; //addu
                     6'b100010: ALUControl <= 5'b00001; //sub
-                    6'b100100: ALUControl <= 5'b11100; //and
+                    6'b100100: ALUControl <= 5'b00011; //and
                     6'b100101: ALUControl <= 5'b00100; //or
                     6'b100110: ALUControl <= 5'b01111; //xor
                     6'b100111: ALUControl <= 5'b01110; //nor
