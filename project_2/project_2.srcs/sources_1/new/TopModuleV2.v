@@ -42,7 +42,7 @@ module TopModuleV2(Clk, Rst);
     wire [4:0] EX_RegRs, EX_RegRt, EX_RegRd, EX_Shamt, EX_ALUControl, EX_WriteRegM, EX_WriteReg;
     wire [5:0] EX_Opcode, EX_Function;
     wire [15:0] EX_Imm;
-    wire [31:0] EX_ReadData1, EX_ReadData2, EX_ImmExt, EX_Instr, EX_HLOut, EX_WDMem,
+    wire [31:0] EX_ReadData1, EX_ReadData2, EX_ImmExt, EX_Instr, EX_HLOut, EX_WDMem, EX_ALUInA_Forward,
                 EX_ALUInA, EX_ALUInB, EX_ALUOutMSB, EX_ALUOutLSB, EX_RA, EX_lui;
     
     
@@ -133,11 +133,11 @@ module TopModuleV2(Clk, Rst);
     assign ID_Imm = ID_Instr[15:0];
     
     Controller MainControl(ID_Opcode, ID_RegDst, ID_RegWrite, ID_MemRead, ID_MemWrite,
-        ID_MemtoReg, ID_ALUSrc, ID_ShamtCtrl, ID_BranchC1, ID_SignZero, ID_ByteControl,
-        ID_ALUOp);
+        ID_MemtoReg, ID_ALUSrc, ID_BranchC1, ID_SignZero, ID_ByteControl,ID_ALUOp);
         
     //ALUController can run at the same time as the rest, but has to run after the controller so may slow our latency
-    ALUControl_Block ALUControl1(ID_Function, ID_Instr[21], ID_Instr[6], ID_Instr[10:6], ID_ALUOp, ID_ALUControl);
+    ALUControl_Block ALUControl1(ID_Function, ID_Instr[10:6], ID_ALUOp, ID_Instr[21], ID_Instr[6],
+        ID_ShamtCtrl, ID_ALUControl);
     
     // Takes care of control signals and logic for jumps
     JumpBlock JumpControl1(ID_Opcode, ID_Function, Jump, ID_JALCtrl);
@@ -225,6 +225,8 @@ module TopModuleV2(Clk, Rst);
     assign EX_lui = {EX_Instr[15:0], 16'b0000000000000000};
     
     Mux5Bit2To1 RegDstMux1(EX_WriteReg, EX_RegRt, EX_RegRd, EX_RegDst);
+    
+    // Setting Reg Dst to GPR[31] if instruction is JAL
     Mux5Bit2To1 JALDstMux1(EX_WriteRegM, EX_WriteReg, 5'b11111, EX_JALCtrl);
     
     // For movz/movn
@@ -238,12 +240,13 @@ module TopModuleV2(Clk, Rst);
     // detection are fully functional
     
     // Forwarding muxes
-    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA, EX_ReadData1, WB_WriteData, MEM_ALUOutLSB, 2'b00);
+    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA_Forward, EX_ReadData1, WB_WriteData, MEM_ALUOutLSB, 2'b00);
     Mux32Bit3To1 EX_ForwardB1(EX_WDMem, EX_ReadData2, WB_WriteData, MEM_ALUOutLSB, 2'b00);
     
     // ALU Logic, controller is in ID (makes it faster i think)
     Mux32Bit2To1 ALUSrcMux1(EX_ALUInB, EX_WDMem, EX_ImmExt, EX_ALUSrc);
-    ALU32Bit ALU1(EX_ALUInA, EX_ALUInB, EX_ShamtCtrl, EX_ALUControl, EX_ALUOutMSB, EX_ALUOutLSB, EX_Zero); //zero will not be wired
+    Mux32Bit2To1 ShamtMux1(EX_ALUInA, EX_ALUInA_Forward, {{26{1'b0}},EX_Shamt}, EX_ShamtCtrl);
+    ALU32Bit ALU1(EX_ALUInA, EX_ALUInB, EX_ALUControl, EX_ALUOutMSB, EX_ALUOutLSB, EX_Zero); //zero will not be wired
     
     //----------------------------------------------------------
     //----------------------EX/MEM REG--------------------------

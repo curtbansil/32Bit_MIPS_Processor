@@ -1,14 +1,13 @@
 `timescale 1ns / 1ps
 
 module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
-    MemtoReg, ALUSrc, ShamtCtrl, Branch, SignZero, ByteCtrl,
-    ALUOp, ExtControl);
+    MemtoReg, ALUSrc, Branch, SignZero, ByteCtrl, ALUOp);
     
     input [5:0] opcode;
     
-    output reg RegDst, RegWrite, ExtControl; //ExtControl is for which extension type we want (sero- or sign-extended)
+    output reg RegDst, RegWrite;
     output reg MemRead, MemWrite, MemtoReg;
-    output reg ALUSrc, ShamtCtrl;
+    output reg ALUSrc;
     output reg Branch, SignZero; // SignZero = 0 to sign extend, 1 to zero extend
     // ByteControl = 00 means Least significant 32-bit word of Rt is stored/loaded, 01 means LS 16-bit,
     // 10 means LS 8-bit, 11 is used specifically for load operation, the lui instruction
@@ -29,7 +28,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b0;
                MemtoReg = 1'b1;
                ALUSrc = 1'b0;
-               ShamtCtrl = 1'b0;
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'bxx;
@@ -43,7 +41,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b1;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'b1;
-                ShamtCtrl = 1'b0;
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'b00;
@@ -57,7 +54,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b1;
                MemtoReg = 1'bx;
                ALUSrc = 1'b1;
-               ShamtCtrl = 1'b0;
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b01;
@@ -71,7 +67,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b1;
                MemtoReg = 1'bx;
                ALUSrc = 1'b1;
-               ShamtCtrl = 1'b0;
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b10;
@@ -85,7 +80,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b0;
                MemtoReg = 1'b0;
                ALUSrc = 1'b1;
-               ShamtCtrl = 1'b0;
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b00;
@@ -99,7 +93,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b0;
                MemtoReg = 1'b0;
                ALUSrc = 1'b1;
-               ShamtCtrl = 1'b0;
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b01;
@@ -113,7 +106,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b0;
                MemtoReg = 1'b0;
                ALUSrc = 1'b1;
-               ShamtCtrl = 1'b0;
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b10;
@@ -127,7 +119,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b0;
                MemtoReg = 1'b0;
                ALUSrc = 1'bx;
-               ShamtCtrl = 1'bx;
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b11;
@@ -141,7 +132,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b0;
                MemtoReg = 1'b1;
                ALUSrc = 1'b0;
-               ShamtCtrl = 1'bx;
                Branch = 1'b0;
                SignZero = 1'bx;
                ByteCtrl = 2'bxx;
@@ -154,7 +144,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b1;
                 ALUSrc = 1'b0;
-                ShamtCtrl = 1'b0;
                 Branch = 1'b0;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -167,7 +156,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b1;
                 ALUSrc = 1'b1;
-                ShamtCtrl = 1'b0;
                 Branch = 1'b0;
                 SignZero = 1'b1; // zero extend
                 ByteCtrl = 2'bxx;
@@ -180,7 +168,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b1;
                 ALUSrc = 1'b1;
-                ShamtCtrl = 1'b0;
                 Branch = 1'b0;
                 SignZero = 1'b1;
                 ByteCtrl = 2'bxx;
@@ -193,7 +180,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                MemWrite = 1'b0;
                MemtoReg = 1'b1;
                ALUSrc = 1'b1;
-               ShamtCtrl = 1'b0;
                Branch = 1'b0;
                SignZero = 1'b1;
                ByteCtrl = 2'bxx;
@@ -206,7 +192,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b1;
                 ALUSrc = 1'b1;
-                ShamtCtrl = 1'b0;
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'bxx;
@@ -219,7 +204,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b1;
                 ALUSrc = 1'b1;
-                ShamtCtrl = 1'b0;
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'bxx;
@@ -232,7 +216,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b1;
                 ALUSrc = 1'b1;
-                ShamtCtrl = 1'b1;
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'bxx;
@@ -245,7 +228,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b1;
                 ALUSrc = 1'b1;
-                ShamtCtrl = 1'b1;
                 ByteCtrl = 2'bxx;
                 Branch = 1'b0;
                 SignZero = 1'b0;
@@ -258,7 +240,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'bx;
-                ShamtCtrl = 1'bx;
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -271,7 +252,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'bx;
-                ShamtCtrl = 1'bx;
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -284,7 +264,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'bx;
-                ShamtCtrl = 1'bx;
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -297,7 +276,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'bx;
-                ShamtCtrl = 1'bx;
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -310,7 +288,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'bx; 
-                ShamtCtrl = 1'bx;
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -323,7 +300,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'bx;
-                ShamtCtrl = 1'bx;
                 Branch = 1'b0;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -336,7 +312,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'bx;
                 ALUSrc = 1'bx;
-                ShamtCtrl = 1'bx;
                 Branch = 1'b0;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
@@ -349,7 +324,6 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 MemWrite = 1'b0;
                 MemtoReg = 1'b0;
                 ALUSrc = 1'b0; 
-                ShamtCtrl = 1'b0;
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'b00;

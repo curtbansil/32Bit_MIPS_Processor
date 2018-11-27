@@ -20,52 +20,150 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ALUControl_Block(Func, R1, R2, shamt, ALUOp, ALUControl);
+module ALUControl_Block(Func, shamt, ALUOp, R, R_V, ShamtCtrl, ALUControl);
     input [5:0] Func;
     input [4:0] shamt;
     input [2:0] ALUOp;
-    input R1, R2; //R1 = Instr[21], R2 = Instr[6]
+    input R, R_V;
     output reg [4:0] ALUControl;
+    output reg ShamtCtrl;
     
-    always @(Func, ALUOp, shamt) begin
+    always @(Func, ALUOp, shamt) 
+    begin
         case(ALUOp)
-            3'b000 : begin //general R-types
+            3'b000 : 
+            begin //general R-types
                 case(Func)
-                    6'b000000: ALUControl <= 5'b01000; //sll
-                    6'b000010: begin //srl/rotr
-                        case (R1)
-                            1'b0: ALUControl <= 5'b00000; //srl
-                            1'b1: ALUControl <= 5'b01010; //rotr
+                    6'b000000:
+                    begin
+                        ALUControl <= 5'b01000; //sll
+                        ShamtCtrl <= 1'b1;
+                    end
+                    6'b000010:
+                    begin
+                        case(R)
+                            1'b0:
+                            begin
+                                ALUControl <= 5'b01001; // srl
+                                ShamtCtrl <= 1'b1;
+                            end
+                            1'b1:
+                            begin
+                                ALUControl <= 5'b01010; //rotr
+                                ShamtCtrl <= 1'b1;
+                            end
                         endcase
                     end
-                    6'b000011: ALUControl <= 5'b10010; //sra
-                    6'b000100: ALUControl <= 5'b01000; //sllv
-                    6'b000110: begin //srlv/rotrv
-                        case (R2)
-                            1'b0: ALUControl <= 5'b00000; //srlv
-                            1'b1: ALUControl <= 5'b00000; //rotrv
+                    6'b000011:
+                    begin
+                        ALUControl <= 5'b10010; //sra
+                        ShamtCtrl <= 1'b1;
+                    end
+                    6'b000100:
+                    begin   
+                        ALUControl <= 5'b01000; //sllv
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b000110: 
+                    begin
+                        case(R_V)
+                            1'b0:
+                            begin
+                                ALUControl <= 5'b01001; // srlv
+                                ShamtCtrl <= 1'b0;
+                            end
+                            1'b1:
+                            begin
+                                ALUControl <= 5'b01010; //rotrv
+                                ShamtCtrl <= 1'b0;
+                            end
                         endcase
                     end
-                    6'b000111: ALUControl <= 5'b10010; //srav
-                    6'b100000: ALUControl <= 5'b00000; //add
-                    6'b100001: ALUControl <= 5'b11001; //addu
-                    6'b100010: ALUControl <= 5'b00001; //sub
-                    6'b100100: ALUControl <= 5'b00011; //and
-                    6'b100101: ALUControl <= 5'b00100; //or
-                    6'b100110: ALUControl <= 5'b01111; //xor
-                    6'b100111: ALUControl <= 5'b01110; //nor
+                    6'b000111: 
+                    begin
+                        ALUControl <= 5'b10010; //srav
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b100000:
+                    begin
+                        ALUControl <= 5'b00000; //add
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b100001: 
+                    begin
+                        ALUControl <= 5'b11001; //addu
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b100010: 
+                    begin
+                        ALUControl <= 5'b00001; //sub
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b100100:
+                    begin 
+                        ALUControl <= 5'b11100; //and
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b100101: 
+                    begin
+                        ALUControl <= 5'b00100; //or
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b100110: 
+                    begin
+                        ALUControl <= 5'b01111; //xor
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b100111: 
+                    begin
+                        ALUControl <= 5'b01110; //nor
+                        ShamtCtrl <= 1'b0;
+                    end
                 endcase
             end
-            3'b001 : ALUControl <= 5'b00010; //mul
-            3'b010 : ALUControl <= 5'b00000; //addi
-            3'b011 : ALUControl <= 5'b11001; //addiu
-            3'b100 : ALUControl <= 5'b00011; //andi
-            3'b101 : ALUControl <= 5'b00100; //ori
-            3'b110 : ALUControl <= 5'b01111; //xori
-            3'b111 : begin //seb, seh
+            3'b001 : 
+            begin
+                ALUControl <= 5'b00010; //mul
+                ShamtCtrl <= 1'b0;
+            end
+            3'b010 : 
+            begin
+                ALUControl <= 5'b00000; //addi
+                ShamtCtrl <= 1'b0;
+            end
+            3'b011 : 
+            begin
+                ALUControl <= 5'b11001; //addiu
+                ShamtCtrl <= 1'b0;
+            end
+            3'b100 : 
+            begin
+                ALUControl <= 5'b00011; //andi
+                ShamtCtrl <= 1'b0;
+            end
+            3'b101 : 
+            begin
+                ALUControl <= 5'b00100; //ori
+                ShamtCtrl <= 1'b0;
+            end
+            3'b110 : 
+            begin
+                ALUControl <= 5'b01111; //xori
+                ShamtCtrl <= 1'b0;
+            end
+            3'b111 : 
+            begin //seb, seh
                 case (shamt)
-                    5'b10000 : ALUControl <= 5'b10000; //seb
-                    5'b11000 : ALUControl <= 5'b10001; //seh
+                    5'b10000 : 
+                    begin
+                        ALUControl <= 5'b10000; //seb
+                        ShamtCtrl <= 1'b0;
+                    end
+                    5'b11000 : 
+                    begin
+                        ALUControl <= 5'b10001; //seh
+                        ShamtCtrl <= 1'b0;
+                    end
                 endcase
             end
         endcase

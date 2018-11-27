@@ -25,10 +25,10 @@ module Top_tb();
     reg Clk, Rst;
     
     //TopModule Top(Clk, Rst);
-    SCTopModule Top(Clk, Rst);
+    TopModuleV2 Top(Clk, Rst);
     
     initial begin
-        Clk = 0;
+        Clk = 1;
         forever #50 Clk = ~Clk;
     end
     

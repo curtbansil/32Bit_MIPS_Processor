@@ -1,0 +1,37 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../project_2.srcs/sources_1/new/ALU32Bit.v" \
+"../../../../project_2.srcs/sources_1/new/ALUControl_Block.v" \
+"../../../../project_2.srcs/sources_1/new/Adder.v" \
+"../../../../project_2.srcs/sources_1/new/AndGate.v" \
+"../../../../project_2.srcs/sources_1/new/Comparator.v" \
+"../../../../project_2.srcs/sources_1/new/Controller.v" \
+"../../../../project_2.srcs/sources_1/new/D_FlipFlop.v" \
+"../../../../project_2.srcs/sources_1/new/DataMemory.v" \
+"../../../../project_2.srcs/sources_1/new/HLDetect.v" \
+"../../../../project_2.srcs/sources_1/new/HiLoControl.v" \
+"../../../../project_2.srcs/sources_1/new/HiLoReg.v" \
+"../../../../project_2.srcs/sources_1/new/InstructionMemory.v" \
+"../../../../project_2.srcs/sources_1/new/JALBlock.v" \
+"../../../../project_2.srcs/sources_1/new/MovCheck.v" \
+"../../../../project_2.srcs/sources_1/new/Mux2To1.v" \
+"../../../../project_2.srcs/sources_1/new/Mux32Bit2To1.v" \
+"../../../../project_2.srcs/sources_1/new/Mux32Bit3To1.v" \
+"../../../../project_2.srcs/sources_1/new/Mux32Bit4To1.v" \
+"../../../../project_2.srcs/sources_1/new/Mux5Bit2To1.v" \
+"../../../../project_2.srcs/sources_1/new/PCAdder.v" \
+"../../../../project_2.srcs/sources_1/new/ProgramCounter.v" \
+"../../../../project_2.srcs/sources_1/new/Reg32Bit.v" \
+"../../../../project_2.srcs/sources_1/new/RegBit.v" \
+"../../../../project_2.srcs/sources_1/new/RegisterFile.v" \
+"../../../../project_2.srcs/sources_1/new/ShiftLeft.v" \
+"../../../../project_2.srcs/sources_1/new/SignExtension.v" \
+"../../../../project_2.srcs/sources_1/new/TopModuleV2.v" \
+"../../../../project_2.srcs/sources_1/new/ZeroExtension.v" \
+"../../../../project_2.srcs/sources_1/new/Top_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
