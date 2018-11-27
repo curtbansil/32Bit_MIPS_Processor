@@ -35,7 +35,7 @@ module HLDetect(Opcode, Function, HLGo);
     always @(ID) begin
         case (ID)
             default : begin
-                HLGo <= 4'b0000;
+                HLGo <= 4'b0000;    //unused
             end
             12'b000000010000: begin //mfhi
                 HLGo <= 4'b1000;

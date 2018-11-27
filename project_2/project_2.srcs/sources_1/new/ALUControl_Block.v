@@ -32,10 +32,20 @@ module ALUControl_Block(Func, R1, R2, shamt, ALUOp, ALUControl);
             3'b000 : begin //general R-types
                 case(Func)
                     6'b000000: ALUControl <= 5'b01000; //sll
-                    6'b000010: ALUControl <= 5'b00000; //srl/rotr
+                    6'b000010: begin //srl/rotr
+                        case (R1)
+                            1'b0: ALUControl <= 5'b00000; //srl
+                            1'b1: ALUControl <= 5'b01010; //rotr
+                        endcase
+                    end
                     6'b000011: ALUControl <= 5'b10010; //sra
                     6'b000100: ALUControl <= 5'b01000; //sllv
-                    6'b000110: ALUControl <= 5'b00000; //srlv/rotrv
+                    6'b000110: begin //srlv/rotrv
+                        case (R2)
+                            1'b0: ALUControl <= 5'b00000; //srlv
+                            1'b1: ALUControl <= 5'b00000; //rotrv
+                        endcase
+                    end
                     6'b000111: ALUControl <= 5'b10010; //srav
                     6'b100000: ALUControl <= 5'b00000; //add
                     6'b100001: ALUControl <= 5'b11001; //addu
@@ -47,12 +57,8 @@ module ALUControl_Block(Func, R1, R2, shamt, ALUOp, ALUControl);
                 endcase
             end
             3'b001 : ALUControl <= 5'b00010; //mul
-            3'b010 : begin //addi
-                ALUControl <= 5'b00000; //addi
-            end
-            3'b011 : begin //addiu
-                ALUControl <= 5'b11001; //addiu
-            end
+            3'b010 : ALUControl <= 5'b00000; //addi
+            3'b011 : ALUControl <= 5'b11001; //addiu
             3'b100 : ALUControl <= 5'b00011; //andi
             3'b101 : ALUControl <= 5'b00100; //ori
             3'b110 : ALUControl <= 5'b01111; //xori

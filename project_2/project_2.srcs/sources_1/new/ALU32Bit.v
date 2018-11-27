@@ -26,12 +26,10 @@
 //   operations needed to support. 
 ////////////////////////////////////////////////////////////////////////////////
 
-module ALU32Bit(A, B, ShamtControl, ALUControl, MSBALUResult,
-        LSBALUResult, Zero);
+module ALU32Bit(A, B, ALUControl, MSBALUResult, LSBALUResult, Zero);
 
     input [31:0] A, B;	    // inputs
 	input [4:0] ALUControl; // control bits for ALU operation
-	input ShamtControl;
 	
 	output reg [31:0] MSBALUResult, LSBALUResult;
     output reg Zero;        // Zero=1 if ALUResult == 0 (implemented at bottom)
@@ -140,51 +138,19 @@ module ALU32Bit(A, B, ShamtControl, ALUControl, MSBALUResult,
                 MSBALUResult = {32{1'b0}};
             end
             5'b01000: 
-            begin // sll
-                case(ShamtControl)
-                    1'b0 : 
-                    begin
-                        LSBALUResult = B << A[4:0];
-                        MSBALUResult = {32{1'b0}};
-                    end
-                    1'b1 :
-                    begin
-                        LSBALUResult = B << A;
-                        MSBALUResult = {32{1'b0}};
-                    end
-                endcase
+            begin // sll / sllv
+                LSBALUResult = B << A[4:0];
+                MSBALUResult = {32{1'b0}};
             end
             5'b01001: 
-            begin // srl
-                case(ShamtControl)
-                    1'b0 : 
-                    begin
-                        LSBALUResult = B >> A[4:0];
-                        MSBALUResult = {32{1'b0}};
-                    end
-                    1'b1 : 
-                    begin
-                        LSBALUResult = B >> A;
-                        MSBALUResult = {32{1'b0}};
-                    end
-                 endcase
-
+            begin // srl / srlv
+                LSBALUResult = B >> A[4:0];
+                MSBALUResult = {32{1'b0}};
             end
             5'b01010: 
             begin // rotr
-                 case(ShamtControl)
-                   1'b0 : 
-                   begin
-                       LSBALUResult = (B << (~A[4:0] + 1'b1)) | (B >> A[4:0]);
-                       MSBALUResult  = {32{1'b0}};    
-                   end
-                   1'b1 :
-                   begin
-                       LSBALUResult = (B << (~A + 1'b1)) | (B >> A);
-                       MSBALUResult  = {32{1'b0}}; 
-                   end
-               endcase
-                
+               LSBALUResult = (B << (~A[4:0] + 1'b1)) | (B >> A[4:0]);
+               MSBALUResult  = {32{1'b0}};
             end
             5'b01011: 
             begin // slte
