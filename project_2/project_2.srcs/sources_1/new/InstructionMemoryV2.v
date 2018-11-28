@@ -42,7 +42,9 @@ module InstructionMemory(Address, Instruction);
 
     output reg [31:0] Instruction;    // Instruction at memory location Address
     
-    reg [6:0] tempA;
+    wire [8:0] tempA;
+    
+    assign tempA = Address[10:2];
     
    //Create 2D array for memory with 128 32-bit elements here
         reg [31:0] memory [0:368];
@@ -421,8 +423,7 @@ module InstructionMemory(Address, Instruction);
         end
         
         always @ * begin
-            tempA = Address[8:2];
-            Instruction = memory[tempA];    
+            Instruction <= memory[tempA];    
         end
         
         

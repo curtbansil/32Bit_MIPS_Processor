@@ -57,7 +57,7 @@ module ALU32Bit(A, B, ALUControl, MSBALUResult, LSBALUResult, Zero);
             5'b00000: 
             begin // Add
                 // I just followed the operations shown in the MIPS Instruction Reference
-                temp1 = (A[31] | A) + (B[31] | B);
+                // temp1 = (A[31] | A) + (B[31] | B);
 //                if (temp1[32] != temp1[31])
 //                begin
 //                    Overflow = 1'b1;
@@ -65,7 +65,7 @@ module ALU32Bit(A, B, ALUControl, MSBALUResult, LSBALUResult, Zero);
 //                else 
 //                begin
 //                    Overflow = 1'b0;
-                LSBALUResult = temp1[31:0];
+                LSBALUResult = A + B;
                 MSBALUResult = {32{1'b0}};
 //                end
             end
