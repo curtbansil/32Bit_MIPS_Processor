@@ -32,23 +32,23 @@ module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out);
     reg [31:0] saved_Hi, saved_Lo;
     wire [31:0] read_Hi, read_Lo;
     wire [63:0] temp, temp_unsigned;
+    wire mfloFlag, mfhiFlag;
     
     initial begin
-        Out = {32{1'b0}};
-        
         // 
         saved_Hi = {32{1'bx}};
         saved_Lo = {32{1'bx}};
     end
     
-    assign temp = Rs * Rt; //TODO: Check how verilog works with signed/unsigned numbers (check which is default)
+    assign temp = $signed(Rs) * $signed(Rt); //TODO: Check how verilog works with signed/unsigned numbers (check which is default)
     assign temp_unsigned = ({32{1'b0}} | Rs) * ({32{1'b0}} | Rt);
     assign read_Hi = saved_Hi;
     assign read_Lo = saved_Lo;
     
     always @(posedge Clk) 
     begin
-        if (HLWr == 1'b1) begin
+        if (HLWr == 1'b1) 
+        begin
             case(HLType)
                 3'b000 : // mtlo
                 begin
@@ -83,25 +83,34 @@ module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out);
 //                    saved_Hi = {32{1'bx}}; // I feel like mul shouldnt be changing hi and lo. "Unpredictable" prob means you can't know because
 //                    saved_Lo = {32{1'bx}}; // other instructions may modify it but mul itself doesnt use them. we should double check
 //                end
+                
+            endcase
+            case(HLType)
+                3'b110 : // mflo
+                begin
+                    Out = read_Lo;
+                end
+                3'b111 : // mfhi
+                begin
+                    Out = read_Hi;
+                end
+                default :
+                begin
+                    Out = {32{1'bx}};
+                end
             endcase
         end
     end
-        
-    always @(negedge Clk)
+    
+    /*assign mfloFlag = (HLType[2] & 1'b1) & (HLType[1] & 1'b1) & (HLType[0] & 1'b0);
+    assign mfhiFlag = (HLType[2] & 1'b1) & (HLType[1] & 1'b1) & (HLType[0] & 1'b1);
+    
+    assign Out = ({32{mfloFlag}} & read_Lo) | ({32{mfhiFlag}} & read_Hi);*/
+    
+    /*always @(negedge Clk)
     begin
         case(HLType)
-            3'b110 : // mflo
-            begin
-                Out = read_Lo;
-            end
-            3'b111 : // mfhi
-            begin
-                Out = read_Hi;
-            end
-            default :
-            begin
-                Out = {32{1'bx}};
-            end
+    
         endcase
-    end
+    end*/
 endmodule

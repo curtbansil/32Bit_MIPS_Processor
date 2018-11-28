@@ -24,7 +24,7 @@ module TopModuleV2(Clk, Rst);
     wire ID_RegDst, ID_RegWrite, ID_MemRead, ID_MemWrite, ID_BranchC1, ID_BranchC2,
             ID_MemtoReg, ID_ALUSrc, ID_ShamtCtrl, ID_Branch, ID_SignZero, ID_PCJump, ID_JALCtrl;
     wire [1:0] ID_ByteControl;
-    wire [2:0] ID_ALUOp;
+    wire [3:0] ID_ALUOp;
     wire [3:0] ID_HLGo;
     wire [4:0] ID_RegRs, ID_RegRt, ID_RegRd, ID_ALUControl;
     wire [5:0] ID_Opcode, ID_Function;
@@ -38,7 +38,7 @@ module TopModuleV2(Clk, Rst);
     
     // EX Wires
     wire EX_RegDst, EX_RegWrite, EX_MemRead, EX_MemWrite, EX_Zero, EX_JALCtrl,
-            EX_MemtoReg, EX_ALUSrc, EX_ShamtCtrl, EX_HLWr, EX_RegWriteMod;
+            EX_MemtoReg, EX_ALUSrc, EX_ShamtCtrl, EX_HLWr, EX_RegWriteMod, EX_HLFlag;
     wire [1:0] EX_ByteControl;
     wire [2:0] EX_HLType;
     wire [3:0] EX_HLGo;
@@ -46,7 +46,7 @@ module TopModuleV2(Clk, Rst);
     wire [5:0] EX_Opcode, EX_Function;
     wire [15:0] EX_Imm;
     wire [31:0] EX_ReadData1, EX_ReadData2, EX_ImmExt, EX_Instr, EX_HLOut, EX_WDMem, EX_ALUInA_Forward,
-                EX_ALUInA, EX_ALUInB, EX_ALUOutMSB, EX_ALUOutLSB, EX_RA, EX_lui;
+                EX_ALUInA, EX_ALUInB, EX_ALUOutMSB, EX_ALUOutLSB, EX_OutLSB, EX_RA, EX_lui;
     
     
     // EXMEM Reg Wires
@@ -58,7 +58,7 @@ module TopModuleV2(Clk, Rst);
     wire MEM_MemWrite, MEM_MemRead, MEM_RegWrite, MEM_MemtoReg, MEM_JALCtrl;
     wire [1:0] MEM_ByteControl;
     wire [4:0] MEM_WriteReg;
-    wire [31:0] MEM_ALUOutMSB, MEM_ALUOutLSB, MEM_ReadDataM, MEM_DataIn, MEM_RA, MEM_lui, MEM_WDMem,
+    wire [31:0] MEM_ALUOutMSB, MEM_OutLSB, MEM_ReadDataM, MEM_DataIn, MEM_RA, MEM_lui, MEM_WDMem,
                 sh, sb;
     
     // MEMWB Reg Wires
@@ -70,7 +70,7 @@ module TopModuleV2(Clk, Rst);
     wire WB_RegWrite, WB_MemtoReg, WB_JALCtrl;
     wire [1:0] WB_ByteControl;
     wire [4:0] WB_WriteReg;
-    wire [31:0] WB_WriteData, WB_ALUOutLSB, WB_ALUOutMSB, WB_LoadData,
+    wire [31:0] WB_WriteData, WB_OutLSB, WB_ALUOutMSB, WB_LoadData,
                 WB_lui, WB_ReadDataM, WB_RegWD, WB_RA, lb, lh;
     
     // Forwarding/Hazard detection wires
@@ -91,8 +91,8 @@ module TopModuleV2(Clk, Rst);
 //    ForwardingUnit ForwardUnit1(MEM_WriteReg, WB_WriteReg, EX_RegRs, EX_RegRt,
 //        MEM_RegWrite, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl);
         
-    HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead,
-                                     IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
+    HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, 
+                                        IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
     
     // Muxes for jumps and branches
     
@@ -144,8 +144,8 @@ module TopModuleV2(Clk, Rst);
     // they bring the output of the alu from mem to the branch comparator, nothing else
     
     // Forwarding muxes
-    Mux32Bit2To1 ID_ForwardA1(ID_BOutA, ID_ReadData1, MEM_ALUOutLSB, 1'b0);
-    Mux32Bit2To1 ID_ForwardB1(ID_BOutB, ID_ReadData2, MEM_ALUOutLSB, 1'b0);
+    Mux32Bit2To1 ID_ForwardA1(ID_BOutA, ID_ReadData1, MEM_OutLSB, 1'b0);
+    Mux32Bit2To1 ID_ForwardB1(ID_BOutB, ID_ReadData2, MEM_OutLSB, 1'b0);
     
     // Branching logic
     Comparator BranchComp1(ID_Opcode, ID_RegRt, ID_BOutA, ID_BOutB, ID_BranchC2);
@@ -168,7 +168,7 @@ module TopModuleV2(Clk, Rst);
     
     //----------------------------------------------------------
     //----------------------ID/EX REG----------------------------
-    
+     
     assign IDEX_Flush = 1'b0;
      
     // 32-bit outputs
@@ -226,20 +226,23 @@ module TopModuleV2(Clk, Rst);
     MovCheck MovControl1(EX_Instr, EX_RegWrite, EX_ReadData2, EX_RegWriteMod);
     
     // Hi/Lo register logic
-    HiLoControl HLCtrl1(EX_HLGo, EX_HLWr, EX_HLType);
+    HiLoControl HLCtrl1(EX_HLGo, EX_HLWr, EX_HLType, EX_HLFlag);
     HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ReadData1, EX_ReadData2, EX_HLOut);
     
     // TODO: Change 2'b00 below to EX_ForwardAControl and EX_ForwardBControl when forwarding/hazard
     // detection are fully functional
     
     // Forwarding muxes
-    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA_Forward, EX_ReadData1, WB_WriteData, MEM_ALUOutLSB, 2'b00);
-    Mux32Bit3To1 EX_ForwardB1(EX_WDMem, EX_ReadData2, WB_WriteData, MEM_ALUOutLSB, 2'b00);
+    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA_Forward, EX_ReadData1, WB_WriteData, MEM_OutLSB, 2'b00);
+    Mux32Bit3To1 EX_ForwardB1(EX_WDMem, EX_ReadData2, WB_WriteData, MEM_OutLSB, 2'b00);
     
     // ALU Logic, controller is in ID (makes it faster i think)
     Mux32Bit2To1 ALUSrcMux1(EX_ALUInB, EX_WDMem, EX_ImmExt, EX_ALUSrc);
     Mux32Bit2To1 ShamtMux1(EX_ALUInA, EX_ALUInA_Forward, {{27{1'b0}},EX_Shamt}, EX_ShamtCtrl);
     ALU32Bit ALU1(EX_ALUInA, EX_ALUInB, EX_ALUControl, EX_ALUOutMSB, EX_ALUOutLSB, EX_Zero); //zero will not be wired
+    
+    // Choose between ALU Output and HLReg Output
+    Mux32Bit2To1 ALUHLMux1(EX_OutLSB, EX_ALUOutLSB, EX_HLOut, EX_HLFlag);
     
     //----------------------------------------------------------
     //----------------------EX/MEM REG--------------------------
@@ -248,7 +251,7 @@ module TopModuleV2(Clk, Rst);
     
     // 32-bit outputs
     Reg32Bit EXMEM_ALUOutMSB1(MEM_ALUOutMSB, EX_ALUOutMSB, 1'b1, EXMEM_Flush, Clk);
-    Reg32Bit EXMEM_ALUOutLSB1(MEM_ALUOutLSB, EX_ALUOutLSB, 1'b1, EXMEM_Flush, Clk);
+    Reg32Bit EXMEM_OutLSB1(MEM_OutLSB, EX_OutLSB, 1'b1, EXMEM_Flush, Clk);
     Reg32Bit EXMEM_lui1(MEM_lui, EX_lui, 1'b1, EXMEM_Flush, Clk);
     Reg32Bit EXMEM_RA1(MEM_RA, EX_RA, 1'b1, EXMEM_Flush, Clk);
     Reg32Bit EXMEM_WDMem1(MEM_WDMem, EX_WDMem, 1'b1, EXMEM_Flush, Clk);
@@ -279,7 +282,7 @@ module TopModuleV2(Clk, Rst);
     
     Mux32Bit4To1 StoreDataMux1(MEM_DataIn, MEM_WDMem, sh, sb, 32'h00000000, MEM_ByteControl);
     
-    DataMemory DataMem1(MEM_ALUOutLSB, MEM_DataIn, Clk, MEM_MemWrite, MEM_MemRead, MEM_ReadDataM);
+    DataMemory DataMem1(MEM_OutLSB, MEM_DataIn, Clk, MEM_MemWrite, MEM_MemRead, MEM_ReadDataM);
     
     //----------------------------------------------------------
     //----------------------MEM/WB REG--------------------------
@@ -289,7 +292,7 @@ module TopModuleV2(Clk, Rst);
     // 32-bit outputs
     Reg32Bit MEMWB_ReadData1(WB_ReadDataM, MEM_ReadDataM, 1'b1, MEMWB_Flush, Clk);
     Reg32Bit MEMWB_ALUOutMSB1(WB_ALUOutMSB, MEM_ALUOutMSB, 1'b1, MEMWB_Flush, Clk);
-    Reg32Bit MEMWB_ALUOutLSB1(WB_ALUOutLSB, MEM_ALUOutLSB, 1'b1, MEMWB_Flush, Clk);
+    Reg32Bit MEMWB_OutLSB1(WB_OutLSB, MEM_OutLSB, 1'b1, MEMWB_Flush, Clk);
     Reg32Bit MEMWB_lui1(WB_lui, MEM_lui, 1'b1, MEMWB_Flush, Clk);
     Reg32Bit MEMWB_RA1(WB_RA, MEM_RA, 1'b1, MEMWB_Flush, Clk);
     
@@ -318,7 +321,7 @@ module TopModuleV2(Clk, Rst);
     // Normal muxes to choose which data to send to register
     Mux32Bit4To1 LoadDataMux1(WB_LoadData, WB_ReadDataM, lh, lb, WB_lui, WB_ByteControl);
     // Same mux as in MEM stage^
-    Mux32Bit2To1 WBMux(WB_WriteData, WB_LoadData, WB_ALUOutLSB, WB_MemtoReg);
+    Mux32Bit2To1 WBMux(WB_WriteData, WB_LoadData, WB_OutLSB, WB_MemtoReg);
     
     // JAL Mux #2
     Mux32Bit2To1 JALMux(WB_RegWD, WB_WriteData, WB_RA, WB_JALCtrl);

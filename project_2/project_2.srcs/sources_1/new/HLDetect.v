@@ -28,38 +28,49 @@ module HLDetect(Opcode, Function, HLGo);
     wire [11:0] ID;
     assign ID = {Opcode, Function};
     
-    initial begin
+    initial 
+    begin
         HLGo <= 4'b0000;
     end
     
-    always @(ID) begin
+    always @(ID) 
+    begin
         case (ID)
-            default : begin
-                HLGo <= 4'b0000;    //unused
-            end
-            12'b000000010000: begin //mfhi
+            12'b000000010000: 
+            begin //mfhi
                 HLGo <= 4'b1000;
             end
-            12'b000000010001: begin //mthi
+            12'b000000010001: 
+            begin //mthi
                 HLGo <= 4'b1001;
             end
-            12'b000000010010: begin //mflo
+            12'b000000010010: 
+            begin //mflo
                 HLGo <= 4'b1010;
             end
-            12'b000000010011: begin //mtlo
+            12'b000000010011: 
+            begin //mtlo
                 HLGo <= 4'b1011;
             end
-            12'b011100000000: begin //madd
+            12'b011100000000: 
+            begin //madd
                 HLGo <= 4'b1100;
             end
-            12'b011100000100: begin //msub
+            12'b011100000100: 
+            begin //msub
                 HLGo <= 4'b1101;
             end
-            12'b000000011000: begin //mult
+            12'b000000011000: 
+            begin //mult
                 HLGo <= 4'b1110;
             end
-            12'b000000011001: begin //multu
+            12'b000000011001: 
+            begin //multu
                 HLGo <= 4'b1111;
+            end
+            default : 
+            begin
+                HLGo <= 4'b0000;    //unused
             end
         endcase
     end

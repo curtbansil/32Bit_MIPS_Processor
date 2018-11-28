@@ -15,7 +15,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
     // There shouldn't be a problem with using 11 for lui since sw will have that set if the operation is store
     // ByteControl is x otherwise if not store or load operation since MemToReg Ctrl is there
     output reg [1:0] ByteCtrl;
-    output reg [2:0] ALUOp;
+    output reg [3:0] ALUOp;
     
     always @(*) 
     begin    
@@ -31,7 +31,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'bxx;
-               ALUOp = 3'b000;
+               ALUOp = 4'b0000;
             end
             6'b101011 : 
             begin // sw
@@ -44,7 +44,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'b00;
-                ALUOp = 3'b010;
+                ALUOp = 4'b0010;
             end
             6'b101001 : 
             begin // sh
@@ -57,7 +57,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b01;
-               ALUOp = 3'b010;
+               ALUOp = 4'b0010;
             end
             6'b101000 : 
             begin // sb
@@ -70,7 +70,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b10;
-               ALUOp = 3'b010;
+               ALUOp = 4'b0010;
             end
             6'b100011 : 
             begin // lw
@@ -83,7 +83,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b00;
-               ALUOp = 3'b010;
+               ALUOp = 4'b0010;
             end
             6'b100001 : 
             begin // lh
@@ -96,7 +96,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b01;
-               ALUOp = 3'b010;    
+               ALUOp = 4'b0010;    
             end
             6'b100000 : 
             begin // lb 
@@ -109,7 +109,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b10;
-               ALUOp = 3'b010;
+               ALUOp = 4'b0010;
             end
             6'b001111 : 
             begin // lui 
@@ -122,7 +122,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b0;
                ByteCtrl = 2'b11;
-               ALUOp = 3'b010; 
+               ALUOp = 4'b0010; 
             end
             6'b011111 : 
             begin // seb, seh
@@ -135,7 +135,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'bx;
                ByteCtrl = 2'bxx;
-               ALUOp = 3'b111;
+               ALUOp = 4'b0111;
             end
             6'b011100 : begin // mul
                 RegDst = 1'b1;
@@ -147,7 +147,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b001;
+                ALUOp = 4'b0001;
             end 
             6'b001110 : begin // xori
                 RegDst = 1'b0;
@@ -159,7 +159,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'b1; // zero extend
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b110;
+                ALUOp = 4'b0110;
             end
             6'b001101 : begin // ori
                 RegDst = 1'b0;
@@ -171,7 +171,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'b1;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b101; 
+                ALUOp = 4'b0101; 
             end
             6'b001100 : begin // andi
                RegDst = 1'b0;
@@ -183,7 +183,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                Branch = 1'b0;
                SignZero = 1'b1;
                ByteCtrl = 2'bxx;
-               ALUOp <= 3'b100; 
+               ALUOp <= 4'b0100; 
             end
             6'b001011 : begin // sltiu
                 RegDst = 1'b0;
@@ -195,7 +195,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b110; 
+                ALUOp = 4'b1001; 
             end
             6'b001010 : begin // slti
                 RegDst = 1'b0;
@@ -207,7 +207,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b101;
+                ALUOp = 4'b1000;
             end
             6'b001001 : begin // addiu
                 RegDst = 1'b0;
@@ -219,7 +219,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b011;
+                ALUOp = 4'b0011;
             end
             6'b001000 : begin // addi
                 RegDst = 1'b0;
@@ -231,7 +231,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 ByteCtrl = 2'bxx;
                 Branch = 1'b0;
                 SignZero = 1'b0;
-                ALUOp = 3'b010;
+                ALUOp = 4'b0010;
             end
             6'b000111 : begin // bgtz   
                 RegDst = 1'bx;
@@ -243,7 +243,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b100; 
+                ALUOp = 4'b0100; 
             end
             6'b000110 : begin // blez
                 RegDst = 1'bx;
@@ -255,7 +255,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b011; 
+                ALUOp = 4'b0011; 
             end
             6'b000101 : begin // bne
                 RegDst = 1'bx;
@@ -267,7 +267,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b010; 
+                ALUOp = 4'b0010; 
             end
             6'b000100 : begin // beq   
                 RegDst = 1'bx;
@@ -279,7 +279,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b001; 
+                ALUOp = 4'b0001; 
             end
             6'b000001 : begin // bgez, bltz
                 RegDst = 1'bx;
@@ -291,7 +291,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b1;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b111;  
+                ALUOp = 4'b0111;  
             end
             6'b000010 : begin // j   
                 RegDst = 1'bx;
@@ -303,7 +303,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b000;
+                ALUOp = 4'b0000;
             end
             6'b000011 : begin // jal
                 RegDst = 1'bx;
@@ -315,7 +315,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'bx;
                 ByteCtrl = 2'bxx;
-                ALUOp = 3'b000;
+                ALUOp = 4'b0000;
             end
             default: begin
                 RegDst = 1'b0;
@@ -327,7 +327,7 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 Branch = 1'b0;
                 SignZero = 1'b0;
                 ByteCtrl = 2'b00;
-                ALUOp = 3'b000;  
+                ALUOp = 4'b0000;  
             end
         endcase
         /*if (opcode == 6'b011100) begin

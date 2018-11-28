@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HiLoControl(HLGo, HLWr, HLType);
+module HiLoControl(HLGo, HLWr, HLType, HLFlag);
     input [3:0] HLGo;
     
     wire Go;
@@ -29,34 +29,41 @@ module HiLoControl(HLGo, HLWr, HLType);
     assign ID = HLGo[2:0];
     
     output reg [2:0] HLType;
-    output reg HLWr;
+    output reg HLWr, HLFlag; // HLFlag = 1 tells the processor that the HL Reg Output should be used rather than the ALU Output
     
-    always @(ID, Go) begin
-        if (Go == 1) begin
+    always @(ID, Go) 
+    begin
+        if (Go == 1'b1) 
+        begin
             case(ID)
                 3'b000 : // mfhi
                 begin
                     HLWr = 1'b0;
+                    HLFlag = 1'b1;
                     HLType = 3'b111;
                 end
                 3'b001 : // mthi
                 begin
                     HLWr = 1'b1;
+                    HLFlag = 1'b0;
                     HLType = 3'b001;
                 end
                 3'b010 : // mflo
                 begin
                     HLWr = 1'b0;
+                    HLFlag = 1'b1;
                     HLType = 3'b110;
                 end
                 3'b011 : // mtlo
                 begin
                     HLWr = 1'b1;
+                    HLFlag = 1'b0;
                     HLType = 3'b000;
                 end
                 3'b100 : // madd
                 begin
                     HLWr = 1'b1;
+                    HLFlag = 1'b0;
                     HLType = 3'b010;
                 end
                 3'b101 : // msub
@@ -67,14 +74,22 @@ module HiLoControl(HLGo, HLWr, HLType);
                 3'b110 : // mult
                 begin
                     HLWr = 1'b1;
+                    HLFlag = 1'b0;
                     HLType = 3'b100; 
                 end
                 3'b111 : // multu
                 begin
                     HLWr = 1'b1;
+                    HLFlag = 1'b0;
                     HLType = 3'b101;
                 end
             endcase //removed mul, look at comment in hiloreg file
+        end
+        else
+        begin
+            HLWr = 1'b0;
+            HLFlag = 1'b0;
+            HLType = 3'bxxx;
         end
     end
 endmodule
