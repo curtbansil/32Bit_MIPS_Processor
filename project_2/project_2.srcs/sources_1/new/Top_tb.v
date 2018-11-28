@@ -24,8 +24,8 @@ module Top_tb();
 
     reg Clk, Rst;
     
-    //TopModule Top(Clk, Rst);
-    TopModuleV2 Top(Clk, Rst);
+    //TopModuleV2 Top(Clk, Rst);
+    TopModuleSC Top(Clk, Rst);
     
     initial begin
         Clk = 1;

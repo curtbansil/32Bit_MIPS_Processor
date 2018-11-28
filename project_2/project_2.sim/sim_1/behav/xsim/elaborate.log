@@ -34,7 +34,7 @@ Compiling module xil_defaultlib.HiLoReg
 Compiling module xil_defaultlib.ALU32Bit
 Compiling module xil_defaultlib.Mux32Bit4To1
 Compiling module xil_defaultlib.DataMemory
-Compiling module xil_defaultlib.TopModuleV2
+Compiling module xil_defaultlib.TopModuleSC
 Compiling module xil_defaultlib.Top_tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot Top_tb_behav

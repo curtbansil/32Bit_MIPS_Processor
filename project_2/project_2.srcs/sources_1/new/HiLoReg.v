@@ -27,7 +27,7 @@ module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out);
     input [2:0] HLType;
     input [31:0] Rs, Rt;
     
-    output reg [31:0] Out;
+    output [31:0] Out;
     
     reg [31:0] saved_Hi, saved_Lo;
     wire [31:0] read_Hi, read_Lo;
@@ -85,7 +85,7 @@ module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out);
 //                end
                 
             endcase
-            case(HLType)
+            /*case(HLType)
                 3'b110 : // mflo
                 begin
                     Out = read_Lo;
@@ -98,14 +98,14 @@ module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out);
                 begin
                     Out = {32{1'bx}};
                 end
-            endcase
+            endcase*/
         end
     end
     
-    /*assign mfloFlag = (HLType[2] & 1'b1) & (HLType[1] & 1'b1) & (HLType[0] & 1'b0);
+    assign mfloFlag = (HLType[2] & 1'b1) & (HLType[1] & 1'b1) & (!HLType[0] & 1'b1);
     assign mfhiFlag = (HLType[2] & 1'b1) & (HLType[1] & 1'b1) & (HLType[0] & 1'b1);
     
-    assign Out = ({32{mfloFlag}} & read_Lo) | ({32{mfhiFlag}} & read_Hi);*/
+    assign Out = ({32{mfloFlag}} & read_Lo) | ({32{mfhiFlag}} & read_Hi);
     
     /*always @(negedge Clk)
     begin

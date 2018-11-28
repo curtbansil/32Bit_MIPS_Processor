@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module TopModuleV2(Clk, Rst);
+module TopModuleSC(Clk, Rst);
 
     input Clk, Rst;
 
@@ -92,8 +92,8 @@ module TopModuleV2(Clk, Rst);
 //    ForwardingUnit ForwardUnit1(MEM_WriteReg, WB_WriteReg, EX_RegRs, EX_RegRt,
 //        MEM_RegWrite, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl);
         
-    HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, 
-                                        IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
+//    HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, 
+//                                        IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
     
     // Muxes for jumps and branches
     
@@ -113,6 +113,8 @@ module TopModuleV2(Clk, Rst);
     
     //----------------------------------------------------------
     //----------------------IF/ID REG---------------------------
+    assign IFID_WrEn = 1'b1;
+    assign IFID_Flush = 1'b0;
     
     Reg32Bit IFID_PCNext1(ID_PCNext, IF_PCNext, IFID_WrEn, IFID_Flush, Clk);
     Reg32Bit IFID_Instr1(ID_Instr, IF_Instr, IFID_WrEn, IFID_Flush, Clk);
@@ -169,7 +171,7 @@ module TopModuleV2(Clk, Rst);
     
     //----------------------------------------------------------
     //----------------------ID/EX REG----------------------------
-     
+     assign IDEX_WrEn = 1'b1;
     assign IDEX_Flush = 1'b0;
      
     // 32-bit outputs
