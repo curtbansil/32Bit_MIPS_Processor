@@ -331,7 +331,8 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
                 ByteCtrl = 2'bxx;
                 ALUOp = 4'b0000;
             end
-            default: begin
+            default: 
+            begin
                 RegDst = 1'b0;
                 RegWrite = 1'b0;
                 MemRead = 1'b0;

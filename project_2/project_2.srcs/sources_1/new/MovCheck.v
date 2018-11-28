@@ -35,7 +35,7 @@ module MovCheck(EX_Instr, EX_RegWrite, EX_ReadData2, EX_RegWriteMod);
         EX_RegWriteMod <= 1'b0;
     end
     
-    always @(EX_Instr, EX_RegWrite) 
+    always @(*) 
     begin
         case (ID)
             12'b000000001011 : 

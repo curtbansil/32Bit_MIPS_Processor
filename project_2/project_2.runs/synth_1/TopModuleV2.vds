@@ -414,3 +414,293 @@ DSP Report: operator temp_unsigned is absorbed into DSP temp_unsigned.
 DSP Report: Generating DSP temp_unsigned, operation Mode is: C+A*B.
 DSP Report: operator temp_unsigned is absorbed into DSP temp_unsigned.
 DSP Report: operator temp_unsigned is absorbed into DSP temp_unsigned.
+INFO: [Synth 8-5546] ROM "HLDetect1/HLGo" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[31]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[30]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[29]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[28]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[27]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[26]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[25]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[24]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[23]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[22]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[21]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[20]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[19]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[18]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[17]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[16]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[15]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[14]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[13]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[12]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[1]
+WARNING: [Synth 8-3331] design DataMemory has unconnected port Address[0]
+WARNING: [Synth 8-3331] design MovCheck has unconnected port EX_Instr[25]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3971] The signal RegFile1/RegFile_reg was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3332] Sequential element (ALUOp_reg[3]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (ALUOp_reg[2]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (ALUOp_reg[1]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (ALUOp_reg[0]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (ShamtCtrl_reg) is unused and will be removed from module ALUControl_Block.
+WARNING: [Synth 8-3332] Sequential element (ALUControl_reg[4]) is unused and will be removed from module ALUControl_Block.
+WARNING: [Synth 8-3332] Sequential element (ALUControl_reg[3]) is unused and will be removed from module ALUControl_Block.
+WARNING: [Synth 8-3332] Sequential element (ALUControl_reg[2]) is unused and will be removed from module ALUControl_Block.
+WARNING: [Synth 8-3332] Sequential element (ALUControl_reg[1]) is unused and will be removed from module ALUControl_Block.
+WARNING: [Synth 8-3332] Sequential element (ALUControl_reg[0]) is unused and will be removed from module ALUControl_Block.
+WARNING: [Synth 8-3332] Sequential element (branch_reg) is unused and will be removed from module Comparator.
+WARNING: [Synth 8-3332] Sequential element (HLCtrl1/HLFlag_reg) is unused and will be removed from module TopModuleV2.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[31]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[30]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[29]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[28]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[27]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[26]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[25]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[24]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[23]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[22]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[21]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[20]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[19]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[18]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[17]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[16]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[15]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[14]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[13]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[12]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[11]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[10]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[9]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[8]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[7]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[6]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[5]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[4]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[3]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[2]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[1]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Hi_reg[0]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[31]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[30]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[29]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[28]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[27]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[26]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[25]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[24]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[23]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[22]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[21]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[20]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[19]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[18]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[17]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[16]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[15]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[14]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[13]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[12]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[11]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[10]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[9]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[8]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[7]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[6]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[5]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[4]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[3]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[2]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[1]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (saved_Lo_reg[0]) is unused and will be removed from module HiLoReg.
+WARNING: [Synth 8-3332] Sequential element (Bit0/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit1/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit2/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit3/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit4/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit5/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit6/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit7/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit8/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit9/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit10/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit11/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit12/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit13/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit14/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit15/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit16/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit17/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit18/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit19/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit20/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit21/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit22/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+WARNING: [Synth 8-3332] Sequential element (Bit23/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ALU32Bit    | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ALU32Bit    | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|HiLoReg     | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|HiLoReg     | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|HiLoReg     | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|HiLoReg     | C+A*B          | 18     | 15     | 31     | -      | 47     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|HiLoReg     | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|HiLoReg     | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|HiLoReg     | C+A*B          | 18     | 16     | 31     | -      | 47     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 342 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+95 Infos, 208 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:55 . Memory (MB): peak = 660.422 ; gain = 414.770
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/TopModuleV2.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file TopModuleV2_utilization_synth.rpt -pb TopModuleV2_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.123 . Memory (MB): peak = 660.422 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 13:28:30 2018...

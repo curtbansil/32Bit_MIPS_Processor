@@ -34,28 +34,40 @@ module Comparator(opcode, rt, rd1, rd2, branch);
         branch <= 0;
     end
     
-    always @(rd1, rd2, opcode) 
+    always @(*) 
     begin
         casex (ID)
             11'b000111xxxxx: 
             begin // bgtz
                 if (rd1 > 0) 
                 begin
-                    branch <= 1;
+                    branch <= 1'b1;
+                end
+                else
+                begin
+                    branch <= 1'b0;
                 end
             end
             11'b000110xxxxx: 
             begin // blez
                 if (rd1 <= 0) 
                 begin
-                    branch <= 1;
+                    branch <= 1'b1;
+                end
+                else
+                begin
+                    branch <= 1'b0;
                 end
             end
             11'b00000100000: 
             begin //bltz
                 if (rd1 < 0) 
                 begin
-                    branch <= 1;
+                    branch <= 1'b1;
+                end
+                else
+                begin
+                    branch <= 1'b0;
                 end
             end
             11'b00000100001: 
@@ -76,12 +88,16 @@ module Comparator(opcode, rt, rd1, rd2, branch);
             begin // beq
                 if (rd1 == rd2) 
                 begin
-                    branch <= 1;
+                    branch <= 1'b1;
+                end
+                else
+                begin
+                    branch <= 1'b0;
                 end
             end
             default:
             begin
-                branch <= 0;
+                branch <= 1'b0;
             end
         endcase
         

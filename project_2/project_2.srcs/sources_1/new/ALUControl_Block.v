@@ -203,6 +203,11 @@ module ALUControl_Block(Func, shamt, ALUOp, R, R_V, ShamtCtrl, ALUControl);
                 ALUControl <= 5'b11000; // Instruction is sltiu, but using sltu operation in ALU
                 ShamtCtrl <= 1'b0;
             end
+            default:
+            begin
+                ALUControl <= 5'b00000;
+                ShamtCtrl <= 1'b0;
+            end
         endcase
     end
 endmodule

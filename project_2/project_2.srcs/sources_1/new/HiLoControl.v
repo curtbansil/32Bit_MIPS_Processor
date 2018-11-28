@@ -90,6 +90,12 @@ module HiLoControl(HLGo, HLWr, HLType, HLFlag);
                     HLFlag = 1'b0;
                     HLType = 3'b101;
                 end
+                default:
+                begin
+                    HLWr = 1'b0;
+                    HLFlag = 1'b0;
+                    HLType = 3'bxxx;
+                end
             endcase //removed mul, look at comment in hiloreg file
         end
         else
