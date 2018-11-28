@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Nov 28 13:27:14 2018
-# Process ID: 13764
+# Start of session at: Wed Nov 28 13:35:12 2018
+# Process ID: 42016
 # Current directory: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1
 # Command line: vivado.exe -log TopModuleV2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TopModuleV2.tcl
 # Log file: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/TopModuleV2.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 44520 
+INFO: Helper process launched with PID 44384 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 358.348 ; gain = 99.688
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 358.781 ; gain = 100.289
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TopModuleV2' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/TopModuleV2.v:3]
 INFO: [Synth 8-6157] synthesizing module 'ForwardingUnit' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ForwardingUnit.v:16]
@@ -47,14 +47,12 @@ INFO: [Synth 8-6155] done synthesizing module 'Controller' (12#1) [C:/Users/bcur
 INFO: [Synth 8-6157] synthesizing module 'ALUControl_Block' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v:43]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v:183]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v:40]
 INFO: [Synth 8-6155] done synthesizing module 'ALUControl_Block' (13#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v:23]
 INFO: [Synth 8-6157] synthesizing module 'JumpBlock' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/JALBlock.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'JumpBlock' (14#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/JALBlock.v:23]
 INFO: [Synth 8-6157] synthesizing module 'RegisterFile' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/RegisterFile.v:51]
 INFO: [Synth 8-6155] done synthesizing module 'RegisterFile' (15#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/RegisterFile.v:51]
 INFO: [Synth 8-6157] synthesizing module 'Comparator' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Comparator.v:22]
-WARNING: [Synth 8-567] referenced signal 'ID' should be on the sensitivity list [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Comparator.v:37]
 INFO: [Synth 8-6155] done synthesizing module 'Comparator' (16#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Comparator.v:22]
 INFO: [Synth 8-6157] synthesizing module 'AndGate' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/AndGate.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'AndGate' (17#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/AndGate.v:23]
@@ -71,10 +69,9 @@ INFO: [Synth 8-6155] done synthesizing module 'Adder' (22#1) [C:/Users/bcurt/Doc
 INFO: [Synth 8-6157] synthesizing module 'Mux5Bit2To1' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux5Bit2To1.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'Mux5Bit2To1' (23#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux5Bit2To1.v:3]
 INFO: [Synth 8-6157] synthesizing module 'MovCheck' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/MovCheck.v:23]
-WARNING: [Synth 8-567] referenced signal 'ID' should be on the sensitivity list [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/MovCheck.v:38]
-WARNING: [Synth 8-567] referenced signal 'EX_ReadData2' should be on the sensitivity list [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/MovCheck.v:38]
 INFO: [Synth 8-6155] done synthesizing module 'MovCheck' (24#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/MovCheck.v:23]
 INFO: [Synth 8-6157] synthesizing module 'HiLoControl' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoControl.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoControl.v:45]
 INFO: [Synth 8-6155] done synthesizing module 'HiLoControl' (25#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoControl.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU32Bit' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALU32Bit.v:29]
 INFO: [Synth 8-6155] done synthesizing module 'ALU32Bit' (26#1) [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALU32Bit.v:29]
@@ -164,17 +161,17 @@ WARNING: [Synth 8-3331] design ForwardingUnit has unconnected port IDEX_Rs[2]
 WARNING: [Synth 8-3331] design ForwardingUnit has unconnected port IDEX_Rs[1]
 WARNING: [Synth 8-3331] design ForwardingUnit has unconnected port IDEX_Rs[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 413.656 ; gain = 154.996
+Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 414.008 ; gain = 155.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 413.656 ; gain = 154.996
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 414.008 ; gain = 155.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 413.656 ; gain = 154.996
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 414.008 ; gain = 155.516
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-5546] ROM "memory" won't be mapped to RAM because it is too sparse
@@ -199,7 +196,7 @@ INFO: [Synth 8-3971] The signal RegFile_reg was recognized as a true dual port R
 WARNING: [Synth 8-327] inferring latch for variable 'branch_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Comparator.v:44]
 WARNING: [Synth 8-327] inferring latch for variable 'HLFlag_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoControl.v:49]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 429.203 ; gain = 170.543
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 429.367 ; gain = 170.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -542,7 +539,7 @@ WARNING: [Synth 8-3332] Sequential element (Bit22/D_FF1/Out_reg) is unused and w
 WARNING: [Synth 8-3332] Sequential element (Bit23/D_FF1/Out_reg) is unused and will be removed from module Reg32Bit.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -580,7 +577,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -592,7 +589,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:35 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -616,7 +613,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -629,7 +626,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -641,25 +638,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -684,11 +681,11 @@ Report Instance Areas:
 |1     |top      |       |     0|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 342 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:40 . Memory (MB): peak = 556.039 ; gain = 297.379
+Synthesis finished with 0 errors, 0 critical warnings and 339 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:51 . Memory (MB): peak = 554.652 ; gain = 296.160
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -696,11 +693,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-95 Infos, 208 Warnings, 0 Critical Warnings and 0 Errors encountered.
+95 Infos, 205 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:55 . Memory (MB): peak = 660.422 ; gain = 414.770
+synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:01:14 . Memory (MB): peak = 664.355 ; gain = 418.891
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/TopModuleV2.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TopModuleV2_utilization_synth.rpt -pb TopModuleV2_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.123 . Memory (MB): peak = 660.422 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 13:28:30 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.267 . Memory (MB): peak = 664.355 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 13:36:49 2018...

@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed Nov 28 13:29:07 2018
-# Process ID: 11852
+# Start of session at: Wed Nov 28 13:38:06 2018
+# Process ID: 46640
 # Current directory: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1
 # Command line: vivado.exe -log TopModuleV2.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TopModuleV2.tcl -notrace
 # Log file: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/TopModuleV2.vdi
@@ -21,7 +21,7 @@ No Unisim elements were transformed.
 
 4 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:34 . Memory (MB): peak = 571.629 ; gain = 321.172
+link_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:29 . Memory (MB): peak = 571.066 ; gain = 321.168
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -32,13 +32,13 @@ INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.298 . Memory (MB): peak = 575.363 ; gain = 3.590
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.305 . Memory (MB): peak = 574.891 ; gain = 3.680
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 Ending Cache Timing Information Task | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 1059.926 ; gain = 484.563
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:49 . Memory (MB): peak = 1059.691 ; gain = 484.801
 
 Starting Logic Optimization Task
 
@@ -47,61 +47,61 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
 Phase 1 Retarget | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.140 . Memory (MB): peak = 1059.691 ; gain = 0.000
 INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 Phase 2 Constant propagation | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.128 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.146 . Memory (MB): peak = 1059.691 ; gain = 0.000
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
 Phase 3 Sweep | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.137 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.158 . Memory (MB): peak = 1059.691 ; gain = 0.000
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
 Phase 4 BUFG optimization | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.144 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.166 . Memory (MB): peak = 1059.691 ; gain = 0.000
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 Phase 5 Shift Register Optimization | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.151 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.180 . Memory (MB): peak = 1059.691 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
 Phase 6 Post Processing Netlist | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.154 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.183 . Memory (MB): peak = 1059.691 ; gain = 0.000
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1059.691 ; gain = 0.000
 Ending Logic Optimization Task | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.161 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.196 . Memory (MB): peak = 1059.691 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 Ending Power Optimization Task | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1059.691 ; gain = 0.000
 
 Starting Final Cleanup Task
 Ending Final Cleanup Task | Checksum: 4e17a280
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1059.926 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1059.691 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 20 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:54 . Memory (MB): peak = 1059.926 ; gain = 488.297
+opt_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:49 . Memory (MB): peak = 1059.691 ; gain = 488.625
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/TopModuleV2_opt.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_drc -file TopModuleV2_drc_opted.rpt -pb TopModuleV2_drc_opted.pb -rpx TopModuleV2_drc_opted.rpx
@@ -112,7 +112,7 @@ INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/dat
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/TopModuleV2_drc_opted.rpt.
 report_drc completed successfully
-report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1103.043 ; gain = 43.117
+report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 1100.863 ; gain = 41.172
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
@@ -130,20 +130,20 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1103.043 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1100.863 ; gain = 0.000
 Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 00000000
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.079 . Memory (MB): peak = 1103.043 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1100.863 ; gain = 0.000
 Phase 1 Placer Initialization | Checksum: 00000000
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.091 . Memory (MB): peak = 1103.043 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1100.863 ; gain = 0.000
 ERROR: [Place 30-494] The design is empty
 Resolution: Check if opt_design has removed all the leaf cells of your design.  Check whether you have instantiated and connected all of the top level ports.
 Ending Placer Task | Checksum: 00000000
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 1103.043 ; gain = 0.000
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1100.863 ; gain = 0.000
 INFO: [Common 17-83] Releasing license: Implementation
 36 Infos, 1 Warnings, 0 Critical Warnings and 2 Errors encountered.
 place_design failed
 ERROR: [Common 17-69] Command failed: Placer could not place all instances
-INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 13:31:13 2018...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 28 13:40:00 2018...

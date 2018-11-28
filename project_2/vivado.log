@@ -3530,3 +3530,232 @@ reset_run synth_1
 launch_runs synth_1 -jobs 2
 [Wed Nov 28 13:27:06 2018] Launched synth_1...
 Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Wed Nov 28 13:28:50 2018] Launched impl_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Wed Nov 28 13:34:59 2018] Launched synth_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Wed Nov 28 13:37:48 2018] Launched impl_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/runme.log
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALU32Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU32Bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl_Block
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/AndGate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AndGate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Comparator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/D_FlipFlop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_FlipFlop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ForwardingUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ForwardingUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HLDetect.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HLDetect
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HazardDetection.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardDetection
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HiLoControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HiLoReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/InstructionMemoryV2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemoryV2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/JALBlock.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module JumpBlock
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/MovCheck.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MovCheck
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux32Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux32Bit3To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit3To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux32Bit4To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit4To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux5Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux5Bit2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Reg32Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Reg32Bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/RegBit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegBit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ShiftLeft.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/SignExtension.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtension
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/TopModuleV2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopModuleV2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ZeroExtension.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ZeroExtension
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1195.508 ; gain = 0.051
+INFO: [USF-XSim-69] 'compile' step finished in '10' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto a63227381d9a46f998edb98a413d1b66 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ForwardingUnit
+Compiling module xil_defaultlib.HazardDetection
+Compiling module xil_defaultlib.Mux2To1
+Compiling module xil_defaultlib.Mux32Bit2To1
+Compiling module xil_defaultlib.Mux32Bit3To1
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.PCAdder
+Compiling module xil_defaultlib.InstructionMemoryV2
+Compiling module xil_defaultlib.D_FlipFlop
+Compiling module xil_defaultlib.RegBit
+Compiling module xil_defaultlib.Reg32Bit
+Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.ALUControl_Block
+Compiling module xil_defaultlib.JumpBlock
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.Comparator
+Compiling module xil_defaultlib.AndGate
+Compiling module xil_defaultlib.HLDetect
+Compiling module xil_defaultlib.SignExtension
+Compiling module xil_defaultlib.ZeroExtension
+Compiling module xil_defaultlib.ShiftLeft
+Compiling module xil_defaultlib.Adder
+Compiling module xil_defaultlib.Mux5Bit2To1
+Compiling module xil_defaultlib.MovCheck
+Compiling module xil_defaultlib.HiLoControl
+Compiling module xil_defaultlib.ALU32Bit
+Compiling module xil_defaultlib.HiLoReg
+Compiling module xil_defaultlib.Mux32Bit4To1
+Compiling module xil_defaultlib.DataMemory
+Compiling module xil_defaultlib.TopModuleV2
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 1195.508 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1208.008 ; gain = 11.359
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 1208.008 ; gain = 12.727
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1208.008 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALU32Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU32Bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALUControl_Block
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/AndGate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AndGate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Comparator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/D_FlipFlop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module D_FlipFlop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/DataMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DataMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ForwardingUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ForwardingUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HLDetect.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HLDetect
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HazardDetection.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HazardDetection
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoControl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HiLoControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/HiLoReg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HiLoReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/InstructionMemoryV2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InstructionMemoryV2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/JALBlock.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module JumpBlock
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/MovCheck.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MovCheck
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux32Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux32Bit3To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit3To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux32Bit4To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux32Bit4To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Mux5Bit2To1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux5Bit2To1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/PCAdder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCAdder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ProgramCounter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ProgramCounter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Reg32Bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Reg32Bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/RegBit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegBit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/RegisterFile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterFile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ShiftLeft.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShiftLeft
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/SignExtension.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignExtension
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/TopModuleV2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopModuleV2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ZeroExtension.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ZeroExtension
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 1208.008 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '9' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim'

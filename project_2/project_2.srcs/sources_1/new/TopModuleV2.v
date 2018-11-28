@@ -1,9 +1,10 @@
 `timescale 1ns / 1ps
 
-module TopModuleV2(Clk, Rst);
+module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
 
     input Clk, Rst;
-
+    
+    output [31:0] HiReg, LoReg, WB_RegWD, IF_PCOut;
     // Curt Bansil, Philippe Cutillas
     // Percent Effort: 50/50
     
@@ -15,7 +16,7 @@ module TopModuleV2(Clk, Rst);
     
     // IF Wires
     wire IF_PCWrite;
-    wire [31:0] IF_PCIn, IF_PCOut, IF_PCNext, IF_Instr, IF_PCTemp, IF_PCJump;
+    wire [31:0] IF_PCIn, /*IF_PCOut,*/ IF_PCNext, IF_Instr, IF_PCTemp, IF_PCJump;
     
     // IFID Reg Wires
     wire IFID_WrEn, IFID_Flush;
@@ -72,7 +73,7 @@ module TopModuleV2(Clk, Rst);
     wire [1:0] WB_ByteControl;
     wire [4:0] WB_WriteReg;
     wire [31:0] WB_WriteData, WB_OutLSB, WB_ALUOutMSB, WB_LoadData,
-                WB_lui, WB_ReadDataM, WB_RegWD, WB_RA, lb, lh;
+                WB_lui, WB_ReadDataM, /*WB_RegWD,*/ WB_RA, lb, lh;
     
     // Forwarding/Hazard detection wires
     
@@ -233,7 +234,7 @@ module TopModuleV2(Clk, Rst);
     Mux32Bit2To1 ShamtMux1(EX_ALUInA, EX_ALUInA_Forward, {{27{1'b0}},EX_Shamt}, EX_ShamtCtrl);
     
     ALU32Bit ALU1(EX_ALUInA, EX_ALUInB, EX_ALUControl, EX_ALUOutMSB, EX_ALUOutLSB, EX_Zero); //zero will not be wired
-    HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ALUInA, EX_ALUInB, EX_HLOut); // Using hte same forwarded inputs to ALU for HL Reg
+    HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ALUInA, EX_ALUInB, EX_HLOut, HiReg, LoReg); // Using hte same forwarded inputs to ALU for HL Reg
     
     // Choose between ALU Output and HLReg Output
     Mux32Bit2To1 ALUHLMux1(EX_OutLSB, EX_ALUOutLSB, EX_HLOut, EX_HLFlag);

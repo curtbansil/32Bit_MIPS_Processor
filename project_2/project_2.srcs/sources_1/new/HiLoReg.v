@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out);
+module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out, saved_Hi, saved_Lo);
 
     input Clk;
     input HLWr;
@@ -29,7 +29,7 @@ module HiLoReg(Clk, HLWr, HLType, Rs, Rt, Out);
     
     output [31:0] Out;
     
-    reg [31:0] saved_Hi, saved_Lo;
+    output reg [31:0] saved_Hi, saved_Lo;
     wire [31:0] read_Hi, read_Lo;
     wire [63:0] temp, temp_unsigned;
     wire mfloFlag, mfhiFlag;

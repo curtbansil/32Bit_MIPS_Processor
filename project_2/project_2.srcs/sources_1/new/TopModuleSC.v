@@ -1,9 +1,10 @@
 `timescale 1ns / 1ps
 
-module TopModuleSC(Clk, Rst);
+module TopModuleSC(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
 
     input Clk, Rst;
-
+    
+    output [31:0] HiReg, LoReg, WB_RegWD, IF_PCOut;
     // Curt Bansil, Philippe Cutillas
     // Percent Effort: 50/50
     
@@ -15,7 +16,7 @@ module TopModuleSC(Clk, Rst);
     
     // IF Wires
     wire IF_PCWrite;
-    wire [31:0] IF_PCIn, IF_PCOut, IF_PCNext, IF_Instr, IF_PCTemp, IF_PCJump;
+    wire [31:0] IF_PCIn, /*IF_PCOut,*/ IF_PCNext, IF_Instr, IF_PCTemp, IF_PCJump;
     
     // IFID Reg Wires
     wire IFID_WrEn, IFID_Flush;
@@ -72,7 +73,7 @@ module TopModuleSC(Clk, Rst);
     wire [1:0] WB_ByteControl;
     wire [4:0] WB_WriteReg;
     wire [31:0] WB_WriteData, WB_OutLSB, WB_ALUOutMSB, WB_LoadData,
-                WB_lui, WB_ReadDataM, WB_RegWD, WB_RA, lb, lh;
+                WB_lui, WB_ReadDataM, /*WB_RegWD,*/ WB_RA, lb, lh;
     
     // Forwarding/Hazard detection wires
     
@@ -230,7 +231,7 @@ module TopModuleSC(Clk, Rst);
     
     // Hi/Lo register logic
     HiLoControl HLCtrl1(EX_HLGo, EX_HLWr, EX_HLType, EX_HLFlag);
-    HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ReadData1, EX_ReadData2, EX_HLOut);
+    HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ReadData1, EX_ReadData2, EX_HLOut, HiReg, LoReg);
     
     // TODO: Change 2'b00 below to EX_ForwardAControl and EX_ForwardBControl when forwarding/hazard
     // detection are fully functional

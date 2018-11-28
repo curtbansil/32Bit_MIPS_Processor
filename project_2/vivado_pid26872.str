@@ -16638,3 +16638,326 @@ selectCodeEditor("HiLoControl.v", 245, 128); // ce (w, ck)
 // WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 2066ms to process. Increasing delay to 11000 ms.
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 63 seconds
+selectCodeEditor("HiLoControl.v", 826, 131); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (ck):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Nov 28 13:34:59 2018] Launched synth_1... Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // bx (ck)
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 316ms to process. Increasing delay to 2000 ms.
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 626ms to process. Increasing delay to 3000 ms.
+// ah (ck): Synthesis Completed: addNotify
+// Elapsed time: 166 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// f (ck): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (ck):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 2 
+// Tcl Message: [Wed Nov 28 13:37:48 2018] Launched impl_1... Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bx (ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design DataMemory has unconnected port Address[31]. ]", 1, true); // ah (O, ck) - Node
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design DataMemory has unconnected port Address[31]. ]", 1); // ah (O, ck)
+// Elapsed time: 12 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design DataMemory has unconnected port Address[31]. , [Synth 8-3331] design InstructionMemoryV2 has unconnected port Address[31]. ]", 44, false); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3331] design DataMemory has unconnected port Address[31]. , [Synth 8-3331] design InstructionMemoryV2 has unconnected port Address[31]. ]", 44, false, false, false, false, false, true); // ah (O, ck) - Double Click
+selectCodeEditor("HiLoControl.v", 512, 15); // ce (w, ck)
+// Elapsed time: 38 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-327] inferring latch for variable 'ALUOp_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Controller.v:48]. ]", 101); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-327] inferring latch for variable 'ALUOp_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Controller.v:48]. ]", 101, true); // ah (O, ck) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\bcurt\Documents\GitHub\32Bit_MIPS_Processor\project_2\project_2.srcs\sources_1\new\Controller.v;-;;-;16;-;line;-;48;-;;-;16;-;"); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-327] inferring latch for variable 'ALUOp_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Controller.v:48]. , [Synth 8-327] inferring latch for variable 'ShamtCtrl_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v:47]. ]", 102, false); // ah (O, ck)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-327] inferring latch for variable 'ALUOp_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/Controller.v:48]. , [Synth 8-327] inferring latch for variable 'ShamtCtrl_reg' [C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/ALUControl_Block.v:47]. ]", 102, false); // ah (O, ck)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\bcurt\Documents\GitHub\32Bit_MIPS_Processor\project_2\project_2.srcs\sources_1\new\ALUControl_Block.v;-;;-;16;-;line;-;47;-;;-;16;-;"); // ah (O, ck)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 22 seconds
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (ALUOp_reg[3]) is unused and will be removed from module Controller.. ]", 106); // ah (O, ck)
+// Elapsed time: 27 seconds
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-3332] Sequential element (ALUOp_reg[3]) is unused and will be removed from module Controller.. ]", 106); // ah (O, ck)
+// TclEventType: RUN_FAILED
+// ah (ck): Implementation Failed: addNotify
+// Elapsed time: 48 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // ah (ck)
+// WARNING: HTimer (a Update Status Timer) is taking 454ms to process. Increasing delay to 3000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 169 MB. Current time: 11/28/18 1:48:23 PM MST
+// Elapsed time: 544 seconds
+selectCodeEditor("TopModuleV2.v", 116, 151); // ce (w, ck)
+// Elapsed time: 60 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "HiLoReg.v", 8); // k (j, ck)
+// Elapsed time: 36 seconds
+selectCodeEditor("HiLoReg.v", 337, 163); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("HiLoReg.v", 280, 175); // ce (w, ck)
+selectCodeEditor("HiLoReg.v", 26, 128); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 24 seconds
+selectCodeEditor("HiLoReg.v", 224, 78); // ce (w, ck)
+selectCodeEditor("HiLoReg.v", 312, 75); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+selectCodeEditor("TopModuleSC.v", 122, 103); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 108, 90); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 16 seconds
+selectCodeEditor("TopModuleSC.v", 572, 93); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "HiLoReg.v", 8); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 32 seconds
+selectCodeEditor("TopModuleSC.v", 232, 112); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 189, 47); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 15 seconds
+selectCodeEditor("TopModuleSC.v", 115, 147); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("TopModuleSC.v", 109, 158); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 228, 111); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 36 seconds
+selectCodeEditor("TopModuleSC.v", 205, 215); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 205, 215, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 43 seconds
+selectCodeEditor("TopModuleSC.v", 223, 111); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 209, 111); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("TopModuleSC.v", 302, 175); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 276, 154); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("TopModuleSC.v", 211, 122); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 34 seconds
+selectCodeEditor("TopModuleSC.v", 368, 43); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 295, 113); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("TopModuleSC.v", 172, 163); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("TopModuleSC.v", 248, 164); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("TopModuleSC.v", 209, 193); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 195, 216); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 195, 216, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("TopModuleSC.v", 259, 248); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 344, 247); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("TopModuleSC.v", 237, 59); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 237, 59); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 237, 59, false, false, false, false, true); // ce (w, ck) - Double Click
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 10 seconds
+selectCodeEditor("TopModuleSC.v", 300, 86); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 367, 46); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TopModuleSC.v", 439, 120); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("TopModuleSC.v", 298, 123); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 324, 96); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("TopModuleSC.v", 466, 124); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("TopModuleSC.v", 374, 107); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, ck)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (ck):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'Top_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj Top_tb_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1195.508 ; gain = 0.051 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '10' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim' 
+// Tcl Message: Vivado Simulator 2018.2 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved. Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto a63227381d9a46f998edb98a413d1b66 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log  Using 2 slave threads. Starting static elaboration Completed static elaboration Starting simulation data flow analysis 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: Built simulation snapshot Top_tb_behav 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 1195.508 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds INFO: [USF-XSim-4] XSim::Simulate design INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2018.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// PAPropertyPanels.initPanels (ALUControl_Block.v) elapsed time: 0.2s
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// TclEventType: WAVEFORM_MODEL_EVENT
+// Tcl Message: source Top_tb.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 592 MB. GUI used memory: 176 MB. Current time: 11/28/18 1:57:41 PM MST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// Tcl Message: # run 1000ns 
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1208.008 ; gain = 11.359 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:13 ; elapsed = 00:00:35 . Memory (MB): peak = 1208.008 ; gain = 12.727 
+// 'd' command handler elapsed time: 34 seconds
+// Elapsed time: 35 seconds
+dismissDialog("Run Simulation"); // e (ck)
+// Elapsed time: 89 seconds
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (ay, ck)
+closeTask("Simulation", "Behavioral Simulation - Functional - sim_1 - Top_tb", "DesignTask.SIMULATION");
+// A (ck): Confirm Close: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Tcl Message: close_sim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1208.008 ; gain = 0.000 
+// Elapsed time: 18 seconds
+dismissDialog("Confirm Close"); // A (ck)
+selectCodeEditor("TopModuleSC.v", 729, 63); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("TopModuleV2.v", 328, 151); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleV2.v", 15); // k (j, ck)
+selectCodeEditor("TopModuleV2.v", 264, 91); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+selectCodeEditor("TopModuleSC.v", 32, 112); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 29, 110); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 361, 111, true, false, false, false, false); // ce (w, ck) - Shift Key
+typeControlKey((HResource) null, "TopModuleSC.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleV2.v", 15); // k (j, ck)
+selectCodeEditor("TopModuleV2.v", 152, 98); // ce (w, ck)
+typeControlKey((HResource) null, "TopModuleV2.v", 'v'); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 107, 219); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("TopModuleSC.v", 189, 45); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 427, 44, true, false, false, false, false); // ce (w, ck) - Shift Key
+typeControlKey((HResource) null, "TopModuleSC.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleV2.v", 15); // k (j, ck)
+selectCodeEditor("TopModuleV2.v", 184, 45); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 193, 49); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 188, 46); // ce (w, ck)
+typeControlKey((HResource) null, "TopModuleV2.v", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 10 seconds
+selectCodeEditor("TopModuleV2.v", 509, 222); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("TopModuleV2.v", 557, 227); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 656, 211); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 499, 192); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 624, 127); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 530, 143); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+selectCodeEditor("TopModuleSC.v", 126, 43); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleV2.v", 15); // k (j, ck)
+selectCodeEditor("TopModuleV2.v", 172, 267); // ce (w, ck)
+selectCodeEditor("TopModuleV2.v", 249, 267); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleV2.v", 15); // k (j, ck)
+selectCodeEditor("TopModuleV2.v", 264, 110); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleSC.v", 14); // k (j, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 13 seconds
+selectCodeEditor("TopModuleSC.v", 572, 99); // ce (w, ck)
+selectCodeEditor("TopModuleSC.v", 673, 95, true, false, false, false, false); // ce (w, ck) - Shift Key
+typeControlKey((HResource) null, "TopModuleSC.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleV2.v", 15); // k (j, ck)
+selectCodeEditor("TopModuleV2.v", 530, 97); // ce (w, ck)
+typeControlKey((HResource) null, "TopModuleV2.v", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 4066 ms. Increasing delay to 7000 ms.
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 17 seconds
+selectCodeEditor("TopModuleV2.v", 740, 108); // ce (w, ck)
+// Elapsed time: 99 seconds
+selectCodeEditor("TopModuleV2.v", 216, 167); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (O, ck)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ad (aj, ck)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (ck):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'Top_tb' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvlog --incr --relax -prj Top_tb_vlog.prj" 
+// TclEventType: LAUNCH_SIM_LOG
