@@ -27,6 +27,8 @@ module ForwardingUnit(IFID_Opcode, IFID_Rt, IFID_Rs, IDEX_Rs, IDEX_Rt, EXMEM_Rd,
     reg [1:0] EX_FATemp, EX_FBTemp;
     reg ID_FATemp, ID_FBTemp;
     
+    wire BranchFlag;
+    
     initial 
     begin
         EX_FATemp = 2'b00;
@@ -34,6 +36,10 @@ module ForwardingUnit(IFID_Opcode, IFID_Rt, IFID_Rs, IDEX_Rs, IDEX_Rt, EXMEM_Rd,
         ID_FATemp = 1'b0;
         ID_FBTemp = 1'b0;
     end
+    
+    // Checking if opcode == 0001xx or 000001, because those are the opcodes for the branch instructions
+    assign BranchFlag = ((!IFID_Opcode[5] & 1'b1) & (!IFID_Opcode[4] & 1'b1) & (!IFID_Opcode[3] & 1'b1) & (IFID_Opcode[2] & 1'b1))
+            | ((!IFID_Opcode[5] & 1'b1) & (!IFID_Opcode[4] & 1'b1) & (!IFID_Opcode[3] & 1'b1) & (!IFID_Opcode[2] & 1'b1) & (!IFID_Opcode[1] & 1'b1) & (IFID_Opcode[0] & 1'b1));
     
     always @(*)
     begin
@@ -59,12 +65,12 @@ module ForwardingUnit(IFID_Opcode, IFID_Rt, IFID_Rs, IDEX_Rs, IDEX_Rt, EXMEM_Rd,
             EX_FBTemp = 2'b01;
         end
         
-        if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rs) && (IFID_Opcode == 6'b0001xx)) // if opcode is a branch instruction
+        if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rs) && (BranchFlag == 1)) // if opcode is a branch instruction
         begin
             ID_FATemp = 1'b1;
             ID_FBTemp = 1'b0;
         end
-        else if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rt) && (IFID_Opcode == 6'b0001xx)) // if opcode is a branch instruction
+        else if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rt) && (BranchFlag == 1)) // if opcode is a branch instruction
         begin
             ID_FATemp = 1'b0;
             ID_FBTemp = 1'b1;

@@ -16117,3 +16117,86 @@ typeControlKey((HResource) null, "TopModuleV2.v", 'v'); // ce (w, ck)
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_ANALYSIS_MSG_RESET
 // TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 184 seconds
+selectCodeEditor("ForwardingUnit.v", 202, 180); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 135, 221); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 122, 210); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 197, 180); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 132, 131); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 10 seconds
+selectCodeEditor("ForwardingUnit.v", 91, 145); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 91, 195); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 13 seconds
+selectCodeEditor("ForwardingUnit.v", 624, 77); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 699, 76, true, false, false, false, false); // ce (w, ck) - Shift Key
+typeControlKey((HResource) null, "ForwardingUnit.v", 'c'); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 203, 198); // ce (w, ck)
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 180, 196); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 252, 197); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("ForwardingUnit.v", 175, 251); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 323, 248); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 180, 248); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 170, 248); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 172, 248); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 304, 247); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 191, 251); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 182, 249); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 187, 249); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 315, 252); // ce (w, ck)
+// Elapsed time: 10 seconds
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 560, 250); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 669, 242); // ce (w, ck)
+// Elapsed time: 14 seconds
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+// Elapsed time: 34 seconds
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 99, 215); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 108, 215); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 221, 219); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 176, 198); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 692, 197, true, false, false, false, false); // ce (w, ck) - Shift Key
+selectCodeEditor("ForwardingUnit.v", 687, 197, true, false, false, false, false); // ce (w, ck) - Shift Key
+selectCodeEditor("ForwardingUnit.v", 687, 197, true, false, false, false, false); // ce (w, ck) - Shift Key
+selectCodeEditor("ForwardingUnit.v", 684, 195, true, false, false, false, false); // ce (w, ck) - Shift Key
+selectCodeEditor("ForwardingUnit.v", 691, 197, true, false, false, false, false); // ce (w, ck) - Shift Key
+typeControlKey((HResource) null, "ForwardingUnit.v", 'c'); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 511, 207); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 207, 214); // ce (w, ck)
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 671, 212, true, false, false, false, false); // ce (w, ck) - Shift Key
+typeControlKey((HResource) null, "ForwardingUnit.v", 'c'); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+typeControlKey((HResource) null, "ForwardingUnit.v", 'v'); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 622, 214); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 799, 215); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 535, 215); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 347, 212); // ce (w, ck)
+// Elapsed time: 11 seconds
+selectCodeEditor("ForwardingUnit.v", 363, 178); // ce (w, ck)
+// Elapsed time: 25 seconds
+selectCodeEditor("ForwardingUnit.v", 624, 131); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 792, 137, true, false, false, false, false); // ce (w, ck) - Shift Key
+selectCodeEditor("ForwardingUnit.v", 791, 131, true, false, false, false, false); // ce (w, ck) - Shift Key
+selectCodeEditor("ForwardingUnit.v", 825, 113); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 659, 111, true, false, false, false, false); // ce (w, ck) - Shift Key
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("ForwardingUnit.v", 376, 142); // ce (w, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectCodeEditor("ForwardingUnit.v", 405, 165); // ce (w, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("ForwardingUnit.v", 402, 79); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "InstructionMemoryV2.v", 17); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Comparator.v", 18); // k (j, ck)
+// Elapsed time: 33 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TopModuleV2.v", 15); // k (j, ck)
+selectCodeEditor("TopModuleV2.v", 340, 197); // ce (w, ck)
