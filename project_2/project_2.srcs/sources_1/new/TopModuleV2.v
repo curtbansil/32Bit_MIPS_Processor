@@ -3,6 +3,9 @@
 module TopModuleV2(Clk, Rst);
 
     input Clk, Rst;
+
+    // Curt Bansil, Philippe Cutillas
+    // Percent Effort: 50/50
     
     // TODO: After everything is working, there are likely stray wire initializations not used
     // for anything due to editing, so it is likely best to remove them.
