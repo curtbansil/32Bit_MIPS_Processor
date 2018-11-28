@@ -13,14 +13,14 @@ module TopModuleV2(Clk, Rst);
     //----------------------------------------------------------
     //-------------------INITIALIZATIONS------------------------
     
-    //IF Wires
+    // IF Wires
     wire IF_PCWrite;
     wire [31:0] IF_PCIn, IF_PCOut, IF_PCNext, IF_Instr, IF_PCTemp, IF_PCJump;
     
-    //IFID Reg Wires
+    // IFID Reg Wires
     wire IFID_WrEn, IFID_Flush;
     
-    //ID wires
+    // ID wires
     wire ID_RegDst, ID_RegWrite, ID_MemRead, ID_MemWrite, ID_BranchC1, ID_BranchC2,
             ID_MemtoReg, ID_ALUSrc, ID_ShamtCtrl, ID_Branch, ID_SignZero, ID_PCJump, ID_JALCtrl;
     wire [1:0] ID_ByteControl;
@@ -32,11 +32,11 @@ module TopModuleV2(Clk, Rst);
     wire [31:0] ID_Instr, ID_PCNext, ID_ReadData1, ID_ReadData2, ID_ImmExt, ID_ImmExtS,
                 ID_ImmExtZ, ID_JAddress, ID_PCBranch, ID_RA;
     
-    //IDEX Reg Wires
+    // IDEX Reg Wires
     
     wire IDEX_Flush, IDEX_WrEn;
     
-    //EX Wires
+    // EX Wires
     wire EX_RegDst, EX_RegWrite, EX_MemRead, EX_MemWrite, EX_Zero, EX_JALCtrl,
             EX_MemtoReg, EX_ALUSrc, EX_ShamtCtrl, EX_HLWr, EX_RegWriteMod;
     wire [1:0] EX_ByteControl;
@@ -49,11 +49,11 @@ module TopModuleV2(Clk, Rst);
                 EX_ALUInA, EX_ALUInB, EX_ALUOutMSB, EX_ALUOutLSB, EX_RA, EX_lui;
     
     
-    //EXMEM Reg Wires
+    // EXMEM Reg Wires
     
     wire EXMEM_Flush;
     
-    //MEM Wires
+    // MEM Wires
     
     wire MEM_MemWrite, MEM_MemRead, MEM_RegWrite, MEM_MemtoReg, MEM_JALCtrl;
     wire [1:0] MEM_ByteControl;
@@ -61,11 +61,11 @@ module TopModuleV2(Clk, Rst);
     wire [31:0] MEM_ALUOutMSB, MEM_ALUOutLSB, MEM_ReadDataM, MEM_DataIn, MEM_RA, MEM_lui, MEM_WDMem,
                 sh, sb;
     
-    //MEMWB Reg Wires
+    // MEMWB Reg Wires
     
     wire MEMWB_Flush;
     
-    //WB Wires
+    // WB Wires
     
     wire WB_RegWrite, WB_MemtoReg, WB_JALCtrl;
     wire [1:0] WB_ByteControl;
@@ -88,15 +88,11 @@ module TopModuleV2(Clk, Rst);
     
 //    BranchPredictor BP1(ID_Branch, ID_PCNext, PredictedAd);
     
-    //The logic in the forwarding unit seems overcomplicated, and theres also errors i think but i cant say since i dont get it.
-    //why not just code it normally to get functionality first? This way is gonna cause too many bugs. Also I think 
-    //AddressCompare5Bit is wired incorrectly every time, just a heads up.
-    
 //    ForwardingUnit ForwardUnit1(MEM_WriteReg, WB_WriteReg, EX_RegRs, EX_RegRt,
 //        MEM_RegWrite, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl);
         
-//    HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, 
-//                                        IFID_WrEn, IF_PCWrite);
+    HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead,
+                                     IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
     
     // Muxes for jumps and branches
     
@@ -109,8 +105,7 @@ module TopModuleV2(Clk, Rst);
     //----------------------------------------------------------
     //----------------------IF STAGE----------------------------
     
-    //TODO: Change 1'b1 to PCWrite when forwarding/hazard detection are fully functional
-    ProgramCounter PCReg(IF_PCJump, IF_PCOut, 1'b1, Rst, Clk);
+    ProgramCounter PCReg(IF_PCJump, IF_PCOut, IF_PCWrite, Rst, Clk);
     PCAdder PCAdd1(IF_PCOut, IF_PCNext);
     
     InstructionMemory InstrMem1(IF_PCOut, IF_Instr);
@@ -118,12 +113,8 @@ module TopModuleV2(Clk, Rst);
     //----------------------------------------------------------
     //----------------------IF/ID REG---------------------------
     
-    //TODO: Change 1'b1 to IFID_WrEn when forwarding/hazard detection are fully functional
-    
-    assign IFID_Flush = 1'b0; //remove on condition above
-    
-    Reg32Bit IFID_PCNext1(ID_PCNext, IF_PCNext, 1'b1, IFID_Flush, Clk);
-    Reg32Bit IFID_Instr1(ID_Instr, IF_Instr, 1'b1, IFID_Flush, Clk);
+    Reg32Bit IFID_PCNext1(ID_PCNext, IF_PCNext, IFID_WrEn, IFID_Flush, Clk);
+    Reg32Bit IFID_Instr1(ID_Instr, IF_Instr, IFID_WrEn, IFID_Flush, Clk);
 
     //----------------------------------------------------------
     //----------------------ID STAGE----------------------------
@@ -138,7 +129,7 @@ module TopModuleV2(Clk, Rst);
     Controller MainControl(ID_Opcode, ID_RegDst, ID_RegWrite, ID_MemRead, ID_MemWrite,
         ID_MemtoReg, ID_ALUSrc, ID_BranchC1, ID_SignZero, ID_ByteControl,ID_ALUOp);
         
-    //ALUController can run at the same time as the rest, but has to run after the controller so may slow our latency
+    // ALUController can run at the same time as the rest, but has to run after the controller so may slow our latency
     ALUControl_Block ALUControl1(ID_Function, ID_Instr[10:6], ID_ALUOp, ID_Instr[21], ID_Instr[6],
         ID_ShamtCtrl, ID_ALUControl);
     
@@ -172,16 +163,12 @@ module TopModuleV2(Clk, Rst);
     ShiftLeft ShiftLeft1(ID_ImmExtS, ID_JAddress);
     Adder AddressCalc1(ID_JAddress, ID_PCNext, ID_PCBranch);
     
-    //JAL: getting PC+8 to then pass through pipeline
+    // JAL: getting PC+8 to then pass through pipeline
     PCAdder JAL_WDCalc1(ID_PCNext, ID_RA);
     
     //----------------------------------------------------------
     //----------------------ID/EX REG----------------------------
-     
-    // *** Added IDEX_WrEn because IDEX register needs to be stalled sometimes too ***
-    // However we'll hardcode it until hazard and forwarding work
     
-    assign IDEX_WrEn = 1'b1;
     assign IDEX_Flush = 1'b0;
      
     // 32-bit outputs
@@ -222,7 +209,6 @@ module TopModuleV2(Clk, Rst);
     //----------------------EX STAGE----------------------------
     
     assign EX_Shamt = EX_Instr[10:6];
-    //assign EX_RdData1Shamt = EX_RdData1[4:0]; // not sure what this is? commented it out until I find a use
     assign EX_Opcode = EX_Instr[31:26];
     assign EX_Function = EX_Instr[5:0];
     assign EX_RegRs = EX_Instr[25:21];
@@ -243,7 +229,7 @@ module TopModuleV2(Clk, Rst);
     HiLoControl HLCtrl1(EX_HLGo, EX_HLWr, EX_HLType);
     HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ReadData1, EX_ReadData2, EX_HLOut);
     
-    // TODO: Change 1'b0 below to EX_ForwardAControl and EX_ForwardBControl when forwarding/hazard
+    // TODO: Change 2'b00 below to EX_ForwardAControl and EX_ForwardBControl when forwarding/hazard
     // detection are fully functional
     
     // Forwarding muxes
@@ -331,10 +317,10 @@ module TopModuleV2(Clk, Rst);
     
     // Normal muxes to choose which data to send to register
     Mux32Bit4To1 LoadDataMux1(WB_LoadData, WB_ReadDataM, lh, lb, WB_lui, WB_ByteControl);
-    //Same mux as in MEM stage^
+    // Same mux as in MEM stage^
     Mux32Bit2To1 WBMux(WB_WriteData, WB_LoadData, WB_ALUOutLSB, WB_MemtoReg);
     
-    //JAL Mux #2
+    // JAL Mux #2
     Mux32Bit2To1 JALMux(WB_RegWD, WB_WriteData, WB_RA, WB_JALCtrl);
     
 endmodule
