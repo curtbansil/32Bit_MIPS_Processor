@@ -202,12 +202,12 @@ module ALU32Bit(A, B, ALUControl, MSBALUResult, LSBALUResult, Zero);
             begin // seb
                 if (B[7] == 0) 
                 begin
-                    LSBALUResult = {{24{1'b0}}, A[7:0]};
+                    LSBALUResult = {{24{1'b0}}, B[7:0]};
                     MSBALUResult = {32{1'b0}};
                 end
                 else 
                 begin
-                    LSBALUResult = {{24{1'b1}}, A[7:0]};
+                    LSBALUResult = {{24{1'b1}}, B[7:0]};
                     MSBALUResult = {32{1'b1}};
                 end
             end
@@ -216,12 +216,12 @@ module ALU32Bit(A, B, ALUControl, MSBALUResult, LSBALUResult, Zero);
             begin // seh
                 if (B[15] == 0) 
                 begin
-                    LSBALUResult = {{16{1'b0}}, A[15:0]};
+                    LSBALUResult = {{16{1'b0}}, B[15:0]};
                     MSBALUResult = {32{1'b0}};
                 end
                 else 
                 begin
-                    LSBALUResult = {{16{1'b1}}, A[15:0]};
+                    LSBALUResult = {{16{1'b1}}, B[15:0]};
                     MSBALUResult = {32{1'b1}};
                 end
             end

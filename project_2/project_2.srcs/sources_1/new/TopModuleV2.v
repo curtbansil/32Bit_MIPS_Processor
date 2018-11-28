@@ -93,16 +93,15 @@ module TopModuleV2(Clk, Rst);
         WB_WriteReg, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl, ID_ForwardBControl);
         
     HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemRead, 
-                                  MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush);
+                                          MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush);
     
     // Muxes for jumps and branches
     
     assign jAddress = {IF_PCNext[31:28], ID_Instr[25:0], 2'b00};
     
     Mux32Bit2To1 BranchMux1(IF_PCTemp, IF_PCNext, ID_PCBranch, ID_Branch);
-
-    // 3 to 1 because 3rd is for jr command
     Mux32Bit3To1 JumpMux1(IF_PCJump, IF_PCTemp, jAddress, ID_ReadData1, Jump);
+    // 3 to 1 because 3rd is for jr command
     
     //----------------------------------------------------------
     //----------------------IF STAGE----------------------------
@@ -141,10 +140,6 @@ module TopModuleV2(Clk, Rst);
     
     RegisterFile RegFile1(ID_RegRs, ID_RegRt, WB_WriteReg, WB_RegWD, WB_RegWrite, Clk, Rst,
                             ID_ReadData1, ID_ReadData2);
-    
-    // TODO: Change 1'b0 below to ID_ForwardAControl and ID_ForwardBControl when forwarding/hazard
-    // detection are fully functional. These muxes are from another datapath i found online,
-    // they bring the output of the alu from mem to the branch comparator, nothing else
     
     // Forwarding muxes
     Mux32Bit2To1 ID_ForwardA1(ID_BOutA, ID_ReadData1, MEM_OutLSB, ID_ForwardAControl);
@@ -228,10 +223,6 @@ module TopModuleV2(Clk, Rst);
     
     // Hi/Lo register logic
     HiLoControl HLCtrl1(EX_HLGo, EX_HLWr, EX_HLType, EX_HLFlag);
-    HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ReadData1, EX_ReadData2, EX_HLOut);
-    
-    // TODO: Change 2'b00 below to EX_ForwardAControl and EX_ForwardBControl when forwarding/hazard
-    // detection are fully functional
     
     // Forwarding muxes
     Mux32Bit3To1 EX_ForwardA1(EX_ALUInA_Forward, EX_ReadData1, WB_WriteData, MEM_OutLSB, EX_ForwardAControl);
@@ -240,7 +231,9 @@ module TopModuleV2(Clk, Rst);
     // ALU Logic, controller is in ID (makes it faster i think)
     Mux32Bit2To1 ALUSrcMux1(EX_ALUInB, EX_WDMem, EX_ImmExt, EX_ALUSrc);
     Mux32Bit2To1 ShamtMux1(EX_ALUInA, EX_ALUInA_Forward, {{27{1'b0}},EX_Shamt}, EX_ShamtCtrl);
+    
     ALU32Bit ALU1(EX_ALUInA, EX_ALUInB, EX_ALUControl, EX_ALUOutMSB, EX_ALUOutLSB, EX_Zero); //zero will not be wired
+    HiLoReg HiLoReg1(Clk, EX_HLWr, EX_HLType, EX_ALUInA, EX_ALUInB, EX_HLOut); // Using hte same forwarded inputs to ALU for HL Reg
     
     // Choose between ALU Output and HLReg Output
     Mux32Bit2To1 ALUHLMux1(EX_OutLSB, EX_ALUOutLSB, EX_HLOut, EX_HLFlag);
