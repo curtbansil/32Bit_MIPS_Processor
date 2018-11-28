@@ -361,3 +361,4 @@ run 100 ns
 run 100 ns
 run 600 ns
 run 600 ns
+close_sim

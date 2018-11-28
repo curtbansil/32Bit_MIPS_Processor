@@ -89,8 +89,8 @@ module TopModuleV2(Clk, Rst);
     
 //    BranchPredictor BP1(ID_Branch, ID_PCNext, PredictedAd);
     
-//    ForwardingUnit ForwardUnit1(MEM_WriteReg, WB_WriteReg, EX_RegRs, EX_RegRt,
-//        MEM_RegWrite, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl);
+    ForwardingUnit ForwardUnit1(EX_RegRs, EX_RegRt, MEM_WriteReg, MEM_RegWrite, WB_WriteReg, WB_RegWrite,
+        EX_ForwardAControl, EX_ForwardBControl);
         
     HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, 
                                         IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
@@ -234,8 +234,8 @@ module TopModuleV2(Clk, Rst);
     // detection are fully functional
     
     // Forwarding muxes
-    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA_Forward, EX_ReadData1, WB_WriteData, MEM_OutLSB, 2'b00);
-    Mux32Bit3To1 EX_ForwardB1(EX_WDMem, EX_ReadData2, WB_WriteData, MEM_OutLSB, 2'b00);
+    Mux32Bit3To1 EX_ForwardA1(EX_ALUInA_Forward, EX_ReadData1, WB_WriteData, MEM_OutLSB, EX_ForwardAControl);
+    Mux32Bit3To1 EX_ForwardB1(EX_WDMem, EX_ReadData2, WB_WriteData, MEM_OutLSB, EX_ForwardBControl);
     
     // ALU Logic, controller is in ID (makes it faster i think)
     Mux32Bit2To1 ALUSrcMux1(EX_ALUInB, EX_WDMem, EX_ImmExt, EX_ALUSrc);
