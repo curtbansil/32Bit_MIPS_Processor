@@ -32,7 +32,7 @@ module MovCheck(EX_Instr, EX_RegWrite, EX_ReadData2, EX_RegWriteMod);
     
     initial 
     begin
-        EX_RegWriteMod <= EX_RegWrite;
+        EX_RegWriteMod <= 1'b0;
     end
     
     always @(EX_Instr, EX_RegWrite) 

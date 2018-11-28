@@ -31,7 +31,14 @@ module HiLoControl(HLGo, HLWr, HLType, HLFlag);
     output reg [2:0] HLType;
     output reg HLWr, HLFlag; // HLFlag = 1 tells the processor that the HL Reg Output should be used rather than the ALU Output
     
-    always @(ID, Go) 
+    initial 
+    begin
+        HLType <= 3'b000;
+        HLFlag <= 1'b0;
+        HLWr <= 1'b0;
+    end
+    
+    always @(*) 
     begin
         if (Go == 1'b1) 
         begin

@@ -17,6 +17,20 @@ module Controller(opcode, RegDst, RegWrite, MemRead,MemWrite,
     output reg [1:0] ByteCtrl;
     output reg [3:0] ALUOp;
     
+    initial 
+    begin
+        RegDst = 1'b0;
+        RegWrite = 1'b0;
+        MemRead = 1'b0;
+        MemWrite = 1'b0;
+        MemtoReg = 1'b0;
+        ALUSrc = 1'b0;
+        Branch = 1'b0;
+        SignZero = 1'b0;
+        ByteCtrl = 2'b00;
+        ALUOp = 4'b0000;
+    end
+    
     always @(*) 
     begin    
         case(opcode)

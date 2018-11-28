@@ -79,6 +79,10 @@ module Comparator(opcode, rt, rd1, rd2, branch);
                     branch <= 1;
                 end
             end
+            default:
+            begin
+                branch <= 0;
+            end
         endcase
         
     end

@@ -28,7 +28,14 @@ module ALUControl_Block(Func, shamt, ALUOp, R, R_V, ShamtCtrl, ALUControl);
     output reg [4:0] ALUControl;
     output reg ShamtCtrl;
     
-    always @(Func, ALUOp, shamt) 
+    
+    initial
+    begin
+        ALUControl = 5'b00000;
+        ShamtCtrl = 1'b0;
+    end
+    
+    always @(*) 
     begin
         case(ALUOp)
             4'b0000 : 

@@ -275,6 +275,11 @@ module ALU32Bit(A, B, ALUControl, MSBALUResult, LSBALUResult, Zero);
                 LSBALUResult = A;
                 MSBALUResult = {32{1'b0}};
             end
+            default:
+            begin
+                LSBALUResult = {32{1'bx}};
+                MSBALUResult = {32{1'bx}};
+            end
         endcase
         
         // Check if ALUResult is 0

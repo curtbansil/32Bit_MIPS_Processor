@@ -35,16 +35,12 @@ module JumpBlock(Opcode, Func, Jump, JALCtrl);
         JALCtrl <= 1'b0;
     end
     
-    always @(Opcode, Func, val) begin
+    always @(*) begin
         casex (val)
-            default :
-            begin
-                Jump <= 2'b00;
-                JALCtrl <= 1'b0;
-            end
             12'b000010xxxxxx : 
             begin //j
                 Jump <= 2'b01;
+                JALCtrl <= 1'b0;
             end
             12'b000011xxxxxx : 
             begin //jal
@@ -54,6 +50,12 @@ module JumpBlock(Opcode, Func, Jump, JALCtrl);
             12'b000000001000 : 
             begin //jr
                 Jump <= 2'b10;
+                JALCtrl <= 1'b0;
+            end
+            default :
+            begin
+                Jump <= 2'b00;
+                JALCtrl <= 1'b0;
             end
         endcase
     end
