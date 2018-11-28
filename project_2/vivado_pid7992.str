@@ -4549,3 +4549,411 @@ selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 193, 209); // n (o, ck
 selectCodeEditor("ALUControl_Block.v", 318, 213); // ce (w, ck)
 // Elapsed time: 78 seconds
 selectCodeEditor("ALUControl_Block.v", 321, 140); // ce (w, ck)
+// Elapsed time: 195 seconds
+selectCodeEditor("ALUControl_Block.v", 452, 179); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 327, 145); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 176, 94); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 176, 94, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("ALUControl_Block.v", 304, 248); // ce (w, ck)
+// Elapsed time: 17 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 216, 209); // n (o, ck)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectCodeEditor("ALU32Bit.v", 181, 115); // ce (w, ck)
+selectCodeEditor("ALU32Bit.v", 333, 147); // ce (w, ck)
+// Elapsed time: 138 seconds
+selectCodeEditor("ALU32Bit.v", 164, 131); // ce (w, ck)
+selectCodeEditor("ALU32Bit.v", 164, 131, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("ALU32Bit.v", 291, 129); // ce (w, ck)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 12121 ms. Increasing delay to 10000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/26/18 11:22:11 PM MST
+// WARNING: HTimer (WrapperUtils Delayed Delete Timer) is taking 16927ms to process. Increasing delay to 3000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 1:36:35 AM MST
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 722ms to process. Increasing delay to 2000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1093 ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5037 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 1810 ms. Increasing delay to 3000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 2:06:12 AM MST
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1985 ms to process. Increasing delay to 3000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 2:36:14 AM MST
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1261 ms to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (MainWindowUtils Timer) is taking 3627ms to process. Increasing delay to 11000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 124 MB. Current time: 11/27/18 5:58:52 AM MST
+// WARNING: HTimer (StateMonitor Timer) is taking 21817ms to process. Increasing delay to 5000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 96 MB. Current time: 11/27/18 7:41:04 AM MST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5389 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 5175 ms. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 5409 ms to process. Increasing delay to 4000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 10:43:49 AM MST
+// WARNING: HTimer (WrapperUtils Delayed Delete Timer) is taking 6861949ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1118 ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 1119 ms to process. Increasing delay to 3000 ms.
+// WARNING: HTimer (StateMonitor Timer) is taking 1324ms to process. Increasing delay to 6000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 9358 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 9359 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 6867867 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 21249 ms to process. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 21247 ms. Increasing delay to 5000 ms.
+// WARNING: HTimer (HSTRUtils Dump STR Log Timer) is taking 5036ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 9915 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 9917 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 31177 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 31164 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 31179 ms to process. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 9932 ms to process. Increasing delay to 4000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 9941 ms to process. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 9915 ms to process. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5527 ms. Increasing delay to 10000 ms.
+// WARNING: HTimer (HMemoryUtils Timer) is taking 1144ms to process. Increasing delay to 6000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 137 MB. Current time: 11/27/18 2:05:08 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 2:40:05 PM MST
+// WARNING: HTimer (WrapperUtils Delayed Delete Timer) is taking 22225ms to process. Increasing delay to 5000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5160 ms. Increasing delay to 10000 ms.
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 4975 ms to process. Increasing delay to 4000 ms.
+// Elapsed time: 66084 seconds
+selectCodeEditor("ALU32Bit.v", 356, 145); // ce (w, ck)
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 6874 ms. Increasing delay to 10000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 4:23:59 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 4:53:49 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 5:23:47 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 5:53:50 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 6:23:50 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 9:29:21 PM MST
+// WARNING: HSwingWorker (Monitor File Timestamp Swing Worker) is taking 3153 ms to process. Increasing delay to 5000 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 1549ms to process. Increasing delay to 3000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 9:59:12 PM MST
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 10:41:28 PM MST
+// WARNING: HTimer (WrapperUtils Delayed Delete Timer) is taking 35859ms to process. Increasing delay to 6000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:11:19 PM MST
+// Elapsed time: 31038 seconds
+selectCodeEditor("ALU32Bit.v", 406, 131); // ce (w, ck)
+// Elapsed time: 40 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 125, 208); // n (o, ck)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:19:42 PM MST
+// Elapsed time: 104 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "10010"); // l (aQ, ck)
+selectCodeEditor("ALU32Bit.v", 257, 187); // ce (w, ck)
+selectCodeEditor("ALU32Bit.v", 331, 224); // ce (w, ck)
+selectCodeEditor("ALU32Bit.v", 361, 200); // ce (w, ck)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:21:37 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:21:39 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:21:40 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:21:53 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:21:58 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:22:00 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:22:01 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:22:01 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:22:15 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:22:18 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:22:21 PM MST
+// Elapsed time: 76 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "InstructionMemory.v", 12); // k (j, ck)
+// Elapsed time: 23 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 4*", 14); // k (j, ck)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:09 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:10 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:11 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:23:18 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:20 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:22 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:23:25 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:25 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:23:34 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:23:37 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:23:38 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:40 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:41 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:43 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:44 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:23:45 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:47 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:23:48 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:23:50 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:23:51 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:24:00 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:24:01 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:24:02 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:24:03 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 65 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "InstructionMemory.v", 12); // k (j, ck)
+selectCodeEditor("InstructionMemory.v", 572, 217); // ce (w, ck)
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 4*", 14); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:24:42 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:24:44 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// Elapsed time: 24 seconds
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "BranchComp1 ; Comparator ; Verilog Module", 15, "Comparator", 1, false); // d (O, ck)
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "BranchComp1 ; Comparator ; Verilog Module", 15, "Comparator", 1, false); // d (O, ck)
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "BranchComp1 ; Comparator ; Verilog Module", 15, "Comparator", 1, false, false, false, false, false, true); // d (O, ck) - Double Click
+// TclEventType: SIMULATION_OPEN_SOURCE
+// Elapsed time: 14 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 155, 211); // n (o, ck)Waveform: addNotify
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Comparator.v", 14); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 4*", 13); // k (j, ck)
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 83 MB. Current time: 11/27/18 11:25:27 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:25:30 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 81 MB. Current time: 11/27/18 11:25:31 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:25:33 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:25:36 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:25:38 PM MST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 18 seconds
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 45, 168); // n (o, ck)
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 605 MB. GUI used memory: 82 MB. Current time: 11/27/18 11:25:42 PM MST
+// Elapsed time: 31 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "slt"); // l (aQ, ck)
+// Elapsed time: 29 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "InstructionMemory.v", 12); // k (j, ck)
+// Elapsed time: 85 seconds
+selectCodeEditor("InstructionMemory.v", 607, 215); // ce (w, ck)
+// Elapsed time: 45 seconds
+selectCodeEditor("InstructionMemory.v", 511, 201); // ce (w, ck)
+selectCodeEditor("InstructionMemory.v", 593, 207); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControl_Block.v", 5); // k (j, ck)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // l (aQ, ck)
+selectCodeEditor("ALUControl_Block.v", 280, 83); // ce (w, ck)
+// Elapsed time: 34 seconds
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "BranchComp1 ; Comparator ; Verilog Module", 15, "Comparator", 1, false); // d (O, ck)
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "BranchComp1 ; Comparator ; Verilog Module", 15, "Comparator", 1, false, false, false, false, false, true); // d (O, ck) - Double Click
+// TclEventType: SIMULATION_OPEN_SOURCE
+// Elapsed time: 126 seconds
+selectCodeEditor("Comparator.v", 180, 280); // ce (w, ck)
+selectCodeEditor("Comparator.v", 215, 60); // ce (w, ck)
+selectCodeEditor("Comparator.v", 84, 247); // ce (w, ck)
+selectCodeEditor("Comparator.v", 219, 235); // ce (w, ck)
+selectCodeEditor("Comparator.v", 204, 133); // ce (w, ck)
+selectCodeEditor("Comparator.v", 202, 166); // ce (w, ck)
+selectCodeEditor("Comparator.v", 204, 254); // ce (w, ck)
+selectCodeEditor("Comparator.v", 212, 286); // ce (w, ck)
+selectCodeEditor("Comparator.v", 201, 164); // ce (w, ck)
+selectCodeEditor("Comparator.v", 201, 198); // ce (w, ck)
+selectCodeEditor("Comparator.v", 202, 284); // ce (w, ck)
+selectCodeEditor("Comparator.v", 210, 314); // ce (w, ck)
+selectCodeEditor("Comparator.v", 202, 147); // ce (w, ck)
+selectCodeEditor("Comparator.v", 224, 178); // ce (w, ck)
+selectCodeEditor("Comparator.v", 202, 265); // ce (w, ck)
+selectCodeEditor("Comparator.v", 224, 297); // ce (w, ck)
+selectCodeEditor("Comparator.v", 130, 230); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("Comparator.v", 194, 219, true, false, false, false, false); // ce (w, ck) - Shift Key
+selectCodeEditor("Comparator.v", 212, 209); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 25 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "slt"); // l (aQ, ck)
+selectCodeEditor("ALUControl_Block.v", 239, 227); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 202, 147); // ce (w, ck)
+// Elapsed time: 71 seconds
+selectCodeEditor("Controller.v", 275, 153); // ce (w, ck)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "slt"); // l (aQ, ck)
+selectCodeEditor("Controller.v", 322, 158); // ce (w, ck)
+// WARNING: updateGUI() is taking  1006 ms.
+// Elapsed time: 10 seconds
+selectCodeEditor("Comparator.v", 137, 132); // ce (w, ck)
+selectCodeEditor("Comparator.v", 183, 111); // ce (w, ck)
+selectCodeEditor("Comparator.v", 150, 57); // ce (w, ck)
+selectCodeEditor("Comparator.v", 150, 57, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Comparator.v", 132, 111); // ce (w, ck)
+selectCodeEditor("Comparator.v", 132, 111, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Comparator.v", 84, 114); // ce (w, ck)
+selectCodeEditor("Comparator.v", 172, 128); // ce (w, ck)
+selectCodeEditor("Comparator.v", 164, 109); // ce (w, ck)
+selectCodeEditor("Comparator.v", 165, 133); // ce (w, ck)
+// Elapsed time: 178 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aE (Q, ck)
+selectTab((HResource) null, (HResource) null, "Scope", 0); // aE (Q, ck)
+// Elapsed time: 105 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControl_Block.v", 5); // k (j, ck)
+selectCodeEditor("ALUControl_Block.v", 373, 193); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 183, 145); // ce (w, ck)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "slt"); // l (aQ, ck)
+selectCodeEditor("ALUControl_Block.v", 231, 233); // ce (w, ck)
+// Elapsed time: 34 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU32Bit.v", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Controller.v", 1); // k (j, ck)
+selectCodeEditor("Controller.v", 285, 131); // ce (w, ck)
+selectCodeEditor("Comparator.v", 412, 208); // ce (w, ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU32Bit.v", 3); // k (j, ck)
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("ALU32Bit.v", 114, 60); // ce (w, ck)
+selectCodeEditor("ALU32Bit.v", 114, 60, false, false, false, false, true); // ce (w, ck) - Double Click
+typeControlKey((HResource) null, "ALU32Bit.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControl_Block.v", 5); // k (j, ck)
+// Elapsed time: 64 seconds
+selectCodeEditor("ALUControl_Block.v", 202, 181); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 205, 166); // ce (w, ck)
+// Elapsed time: 13 seconds
+typeControlKey((HResource) null, "ALUControl_Block.v", 'v'); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 342, 207); // ce (w, ck)
+// Elapsed time: 55 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU32Bit.v", 3); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControl_Block.v", 5); // k (j, ck)
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU32Bit.v", 3); // k (j, ck)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "sltu"); // l (aQ, ck)
+selectCodeEditor("ALU32Bit.v", 114, 203); // ce (w, ck)
+selectCodeEditor("ALU32Bit.v", 114, 203, false, false, false, false, true); // ce (w, ck) - Double Click
+typeControlKey((HResource) null, "ALU32Bit.v", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControl_Block.v", 5); // k (j, ck)
+typeControlKey((HResource) null, "ALUControl_Block.v", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 281ms to process. Increasing delay to 2000 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU32Bit.v", 3); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "slti"); // l (aQ, ck)
+// Elapsed time: 195 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "slt"); // l (aQ, ck)
+// Elapsed time: 32 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALUControl_Block.v", 5); // k (j, ck)
+selectCodeEditor("ALUControl_Block.v", 147, 249); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("ALUControl_Block.v", 172, 130); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 189, 137); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 166, 131); // ce (w, ck)
+typeControlKey((HResource) null, "ALUControl_Block.v", 'c'); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 211, 231); // ce (w, ck)
+typeControlKey((HResource) null, "ALUControl_Block.v", 'v'); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 250, 143); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 224, 162); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 220, 180); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 325, 128); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 296, 129); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 405, 128); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 303, 130); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 573, 130); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 391, 151); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 157, 179); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 177, 195); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 205, 211); // ce (w, ck)
+selectCodeEditor("ALUControl_Block.v", 301, 217); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("ALUControl_Block.v", 126, 248); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU32Bit.v", 3); // k (j, ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aE (Q, ck)
+// TclEventType: DG_GRAPH_GENERATED
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // B (D, ck)
+selectTab((HResource) null, (HResource) null, "Scope", 0); // aE (Q, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// Elapsed time: 10 seconds
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "MovControl1 ; MovCheck ; Verilog Module", 49, "MovCheck", 1, false); // d (O, ck)
+selectTreeTable(PAResourceQtoS.SimulationScopesPanel_SIMULATE_SCOPE_TABLE, "MovControl1 ; MovCheck ; Verilog Module", 49, "MovCheck", 1, false, false, false, false, false, true); // d (O, ck) - Double Click
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: SIMULATION_OPEN_SOURCE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("MovCheck.v", 330, 272); // ce (w, ck)

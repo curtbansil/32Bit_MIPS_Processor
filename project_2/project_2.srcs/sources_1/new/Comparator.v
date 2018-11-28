@@ -29,39 +29,53 @@ module Comparator(opcode, rt, rd1, rd2, branch);
     wire [10:0] ID;
     assign ID = {opcode, rt};
     
-    initial begin
+    initial 
+    begin
         branch <= 0;
     end
     
-    always @(rd1, rd2, opcode) begin
+    always @(rd1, rd2, opcode) 
+    begin
         casex (ID)
-            11'b000111xxxxx: begin // bgtz
-                if (rd1 > 0) begin
+            11'b000111xxxxx: 
+            begin // bgtz
+                if (rd1 > 0) 
+                begin
                     branch <= 1;
                 end
             end
-            11'b000110xxxxx: begin // blez
-                if (rd1 <= 0) begin
+            11'b000110xxxxx: 
+            begin // blez
+                if (rd1 <= 0) 
+                begin
                     branch <= 1;
                 end
             end
-            11'b00000100000: begin //bltz
-                if (rd1 < 0) begin
+            11'b00000100000: 
+            begin //bltz
+                if (rd1 < 0) 
+                begin
                     branch <= 1;
                 end
             end
-            11'b00000100001: begin //bgez
-                if (rd1 >= 0) begin
+            11'b00000100001: 
+            begin //bgez
+                if (rd1 >= 0) 
+                begin
                     branch <= 1;
                 end
             end
-            11'b000101xxxxx: begin // bne
-                if (rd1 != rd2) begin
+            11'b000101xxxxx: 
+            begin // bne
+                if (rd1 != rd2) 
+                begin
                     branch <= 1;
                 end
             end
-            11'b000100xxxxx: begin // beq
-                if (rd1 == rd2) begin
+            11'b000100xxxxx: 
+            begin // beq
+                if (rd1 == rd2) 
+                begin
                     branch <= 1;
                 end
             end

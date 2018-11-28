@@ -119,6 +119,16 @@ module ALUControl_Block(Func, shamt, ALUOp, R, R_V, ShamtCtrl, ALUControl);
                         ALUControl <= 5'b01110; //nor
                         ShamtCtrl <= 1'b0;
                     end
+                    6'b101010:
+                    begin
+                        ALUControl <= 5'b00101; // slt
+                        ShamtCtrl <= 1'b0;
+                    end
+                    6'b101011:
+                    begin
+                        ALUControl <= 5'b11000; // sltu
+                        ShamtCtrl <= 1'b0;
+                    end
                 endcase
             end
             3'b001 : 
@@ -165,6 +175,16 @@ module ALUControl_Block(Func, shamt, ALUOp, R, R_V, ShamtCtrl, ALUControl);
                         ShamtCtrl <= 1'b0;
                     end
                 endcase
+            end
+            3'b101:
+            begin
+                ALUControl <= 5'b00101; // Instruction is slti, but using slt operation in ALU
+                ShamtCtrl <= 1'b0;
+            end
+            3'b110:
+            begin
+                ALUControl <= 5'b11000; // Instruction is sltiu, but using sltu operation in ALU
+                ShamtCtrl <= 1'b0;
             end
         endcase
     end
