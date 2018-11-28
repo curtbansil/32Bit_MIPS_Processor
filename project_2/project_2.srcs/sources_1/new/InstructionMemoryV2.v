@@ -36,7 +36,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-module InstructionMemory(Address, Instruction); 
+module InstructionMemoryV2(Address, Instruction); 
 
     input [31:0] Address;        // Input Address 
 

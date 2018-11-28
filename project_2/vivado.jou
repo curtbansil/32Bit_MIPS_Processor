@@ -362,3 +362,11 @@ run 100 ns
 run 600 ns
 run 600 ns
 close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top TopModuleV2 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+add_files -norecurse C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/InstructionMemoryV2.v
+update_compile_order -fileset sources_1

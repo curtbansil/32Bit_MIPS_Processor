@@ -89,8 +89,8 @@ module TopModuleV2(Clk, Rst);
     
 //    BranchPredictor BP1(ID_Branch, ID_PCNext, PredictedAd);
     
-    ForwardingUnit ForwardUnit1(EX_RegRs, EX_RegRt, MEM_WriteReg, MEM_RegWrite, WB_WriteReg, WB_RegWrite,
-        EX_ForwardAControl, EX_ForwardBControl);
+    ForwardingUnit ForwardUnit1(ID_Opcode, ID_RegRt, ID_RegRs, EX_RegRs, EX_RegRt, MEM_WriteReg, MEM_RegWrite,
+        WB_WriteReg, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl, ID_ForwardBControl);
         
     HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, 
                                         IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
@@ -109,7 +109,8 @@ module TopModuleV2(Clk, Rst);
     ProgramCounter PCReg(IF_PCJump, IF_PCOut, IF_PCWrite, Rst, Clk);
     PCAdder PCAdd1(IF_PCOut, IF_PCNext);
     
-    InstructionMemory InstrMem1(IF_PCOut, IF_Instr);
+    //InstructionMemory InstrMem1(IF_PCOut, IF_Instr);
+    InstructionMemoryV2 InstrMem1(IF_PCOut, IF_Instr);
     
     //----------------------------------------------------------
     //----------------------IF/ID REG---------------------------
@@ -145,8 +146,8 @@ module TopModuleV2(Clk, Rst);
     // they bring the output of the alu from mem to the branch comparator, nothing else
     
     // Forwarding muxes
-    Mux32Bit2To1 ID_ForwardA1(ID_BOutA, ID_ReadData1, MEM_OutLSB, 1'b0);
-    Mux32Bit2To1 ID_ForwardB1(ID_BOutB, ID_ReadData2, MEM_OutLSB, 1'b0);
+    Mux32Bit2To1 ID_ForwardA1(ID_BOutA, ID_ReadData1, MEM_OutLSB, ID_ForwardAControl);
+    Mux32Bit2To1 ID_ForwardB1(ID_BOutB, ID_ReadData2, MEM_OutLSB, ID_ForwardBControl);
     
     // Branching logic
     Comparator BranchComp1(ID_Opcode, ID_RegRt, ID_BOutA, ID_BOutB, ID_BranchC2);
