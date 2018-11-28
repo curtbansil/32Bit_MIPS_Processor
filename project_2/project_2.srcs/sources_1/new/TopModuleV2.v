@@ -92,16 +92,17 @@ module TopModuleV2(Clk, Rst);
     ForwardingUnit ForwardUnit1(ID_Opcode, ID_RegRt, ID_RegRs, EX_RegRs, EX_RegRt, MEM_WriteReg, MEM_RegWrite,
         WB_WriteReg, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl, ID_ForwardBControl);
         
-    HazardDetection HazardDetection1(ID_Branch, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, EX_MemRead, 
-                                        IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn);
+    HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemRead, 
+                                  MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush);
     
     // Muxes for jumps and branches
     
     assign jAddress = {IF_PCNext[31:28], ID_Instr[25:0], 2'b00};
     
     Mux32Bit2To1 BranchMux1(IF_PCTemp, IF_PCNext, ID_PCBranch, ID_Branch);
-    Mux32Bit3To1 JumpMux1(IF_PCJump, IF_PCTemp, jAddress, ID_ReadData1, Jump);
+
     // 3 to 1 because 3rd is for jr command
+    Mux32Bit3To1 JumpMux1(IF_PCJump, IF_PCTemp, jAddress, ID_ReadData1, Jump);
     
     //----------------------------------------------------------
     //----------------------IF STAGE----------------------------
@@ -170,8 +171,6 @@ module TopModuleV2(Clk, Rst);
     
     //----------------------------------------------------------
     //----------------------ID/EX REG----------------------------
-     
-    assign IDEX_Flush = 1'b0;
      
     // 32-bit outputs
     Reg32Bit IDEX_RdData1_1(EX_ReadData1, ID_ReadData1, IDEX_WrEn, IDEX_Flush, Clk);
