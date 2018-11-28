@@ -60,51 +60,51 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
     // TODO: Figure out if Rst is necessary
     /*(* mark_debug = "true" *)*/ reg [31:0] RegFile [0:31];
     initial begin
-        ReadData1 = {32{1'b0}};
-        ReadData2 = {32{1'b0}};
+        ReadData1 <= {32{1'b0}};
+        ReadData2 <= {32{1'b0}};
 
-        RegFile[0] = {32{1'b0}};
-        RegFile[1] = {32{1'b0}};
-        RegFile[2] = {32{1'b0}};
-        RegFile[3] = {32{1'b0}};
-        RegFile[4] = {32{1'b0}};
-        RegFile[5] = {32{1'b0}};
-        RegFile[6] = {32{1'b0}};
-        RegFile[7] = {32{1'b0}};
-        RegFile[8] = {32{1'b0}};
-        RegFile[9] = {32{1'b0}};
-        RegFile[10] = {32{1'b0}};
-        RegFile[11] = {32{1'b0}};
-        RegFile[12] = {32{1'b0}};
-        RegFile[13] = {32{1'b0}};
-        RegFile[14] = {32{1'b0}};
-        RegFile[15] = {32{1'b0}};
-        RegFile[16] = {32{1'b0}};
-        RegFile[17] = {32{1'b0}};
-        RegFile[18] = {32{1'b0}};
-        RegFile[19] = {32{1'b0}};
-        RegFile[21] = {32{1'b0}};
-        RegFile[22] = {32{1'b0}};
-        RegFile[23] = {32{1'b0}};
-        RegFile[24] = {32{1'b0}};
-        RegFile[25] = {32{1'b0}};
-        RegFile[26] = {32{1'b0}};
-        RegFile[27] = {32{1'b0}};
-        RegFile[28] = {32{1'b0}};
-        RegFile[29] = {32{1'b0}};
-        RegFile[30] = {32{1'b0}};
-        RegFile[31] = {32{1'b0}};
+        RegFile[0] <= {32{1'b0}};
+        RegFile[1] <= {32{1'b0}};
+        RegFile[2] <= {32{1'b0}};
+        RegFile[3] <= {32{1'b0}};
+        RegFile[4] <= {32{1'b0}};
+        RegFile[5] <= {32{1'b0}};
+        RegFile[6] <= {32{1'b0}};
+        RegFile[7] <= {32{1'b0}};
+        RegFile[8] <= {32{1'b0}};
+        RegFile[9] <= {32{1'b0}};
+        RegFile[10] <= {32{1'b0}};
+        RegFile[11] <= {32{1'b0}};
+        RegFile[12] <= {32{1'b0}};
+        RegFile[13] <= {32{1'b0}};
+        RegFile[14] <= {32{1'b0}};
+        RegFile[15] <= {32{1'b0}};
+        RegFile[16] <= {32{1'b0}};
+        RegFile[17] <= {32{1'b0}};
+        RegFile[18] <= {32{1'b0}};
+        RegFile[19] <= {32{1'b0}};
+        RegFile[21] <= {32{1'b0}};
+        RegFile[22] <= {32{1'b0}};
+        RegFile[23] <= {32{1'b0}};
+        RegFile[24] <= {32{1'b0}};
+        RegFile[25] <= {32{1'b0}};
+        RegFile[26] <= {32{1'b0}};
+        RegFile[27] <= {32{1'b0}};
+        RegFile[28] <= {32{1'b0}};
+        RegFile[29] <= {32{1'b0}};
+        RegFile[30] <= {32{1'b0}};
+        RegFile[31] <= {32{1'b0}};
     end
     
     always @(posedge Clk) begin
         if (RegWrite == 1) begin
-            RegFile[WriteRegister] = WriteData;
+            RegFile[WriteRegister] <= WriteData;
         end
     end
      
     always @(negedge Clk) begin
-        ReadData1 = RegFile[ReadRegister1];
-        ReadData2 = RegFile[ReadRegister2];
+        ReadData1 <= RegFile[ReadRegister1];
+        ReadData2 <= RegFile[ReadRegister2];
     end
     
     /*assign debug_Reg8 = RegFile[8];

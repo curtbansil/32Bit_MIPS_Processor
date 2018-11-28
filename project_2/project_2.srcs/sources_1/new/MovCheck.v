@@ -42,11 +42,15 @@ module MovCheck(EX_Instr, EX_RegWrite, EX_ReadData2, EX_RegWriteMod);
             12'b000000001011 : begin //movn
                 if (EX_ReadData2 != 0) begin
                     EX_RegWriteMod <= 1;
+                end else begin
+                    EX_RegWriteMod <= 0;
                 end
             end
             12'b000000001010 : begin //movz
                 if (EX_ReadData2 == 0) begin
                     EX_RegWriteMod <= 1;
+                end else begin
+                    EX_RegWriteMod <= 0;
                 end
             end
         endcase

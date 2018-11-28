@@ -101,7 +101,7 @@ module TopModuleV2(Clk, Rst);
     
     Mux32Bit2To1 BranchMux1(IF_PCTemp, IF_PCNext, ID_PCBranch, ID_Branch);
     Mux32Bit3To1 JumpMux1(IF_PCJump, IF_PCTemp, jAddress, ID_ReadData1, Jump);
-    // 3 to 1 because of jr command
+    // 3 to 1 because 3rd is for jr command
     
     //----------------------------------------------------------
     //----------------------IF STAGE----------------------------
@@ -169,6 +169,9 @@ module TopModuleV2(Clk, Rst);
     ShiftLeft ShiftLeft1(ID_ImmExtS, ID_JAddress);
     Adder AddressCalc1(ID_JAddress, ID_PCNext, ID_PCBranch);
     
+    //JAL: getting PC+8 to then pass through pipeline
+    PCAdder JAL_WDCalc1(ID_PCNext, ID_RA);
+    
     //----------------------------------------------------------
     //----------------------ID/EX REG----------------------------
      
@@ -224,6 +227,7 @@ module TopModuleV2(Clk, Rst);
     assign EX_RegRd = EX_Instr[15:11];
     assign EX_lui = {EX_Instr[15:0], 16'b0000000000000000};
     
+    // RegDst Mux for Rt and Rd
     Mux5Bit2To1 RegDstMux1(EX_WriteReg, EX_RegRt, EX_RegRd, EX_RegDst);
     
     // Setting Reg Dst to GPR[31] if instruction is JAL
@@ -245,7 +249,7 @@ module TopModuleV2(Clk, Rst);
     
     // ALU Logic, controller is in ID (makes it faster i think)
     Mux32Bit2To1 ALUSrcMux1(EX_ALUInB, EX_WDMem, EX_ImmExt, EX_ALUSrc);
-    Mux32Bit2To1 ShamtMux1(EX_ALUInA, EX_ALUInA_Forward, {{26{1'b0}},EX_Shamt}, EX_ShamtCtrl);
+    Mux32Bit2To1 ShamtMux1(EX_ALUInA, EX_ALUInA_Forward, {{27{1'b0}},EX_Shamt}, EX_ShamtCtrl);
     ALU32Bit ALU1(EX_ALUInA, EX_ALUInB, EX_ALUControl, EX_ALUOutMSB, EX_ALUOutLSB, EX_Zero); //zero will not be wired
     
     //----------------------------------------------------------
@@ -322,10 +326,12 @@ module TopModuleV2(Clk, Rst);
     assign lh = {16'b0000000000000000, WB_ReadDataM[15:0]};
     assign lb = {24'b000000000000000000000000, WB_ReadDataM[7:0]};
     
+    // Normal muxes to choose which data to send to register
     Mux32Bit4To1 LoadDataMux1(WB_LoadData, WB_ReadDataM, lh, lb, WB_lui, WB_ByteControl);
     //Same mux as in MEM stage^
-    
     Mux32Bit2To1 WBMux(WB_WriteData, WB_LoadData, WB_ALUOutLSB, WB_MemtoReg);
+    
+    //JAL Mux #2
     Mux32Bit2To1 JALMux(WB_RegWD, WB_WriteData, WB_RA, WB_JALCtrl);
     
 endmodule

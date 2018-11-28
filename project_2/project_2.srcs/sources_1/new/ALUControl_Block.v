@@ -101,7 +101,7 @@ module ALUControl_Block(Func, shamt, ALUOp, R, R_V, ShamtCtrl, ALUControl);
                     end
                     6'b100100:
                     begin 
-                        ALUControl <= 5'b11100; //and
+                        ALUControl <= 5'b00011; //and
                         ShamtCtrl <= 1'b0;
                     end
                     6'b100101: 
