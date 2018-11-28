@@ -16468,3 +16468,46 @@ selectCodeEditor("ForwardingUnit.v", 80, 147); // ce (w, ck)
 selectCodeEditor("ForwardingUnit.v", 80, 147, false, false, false, false, true); // ce (w, ck) - Double Click
 // Elapsed time: 34 seconds
 selectCodeEditor("ForwardingUnit.v", 77, 162); // ce (w, ck)
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 3685 ms. Increasing delay to 5000 ms.
+// Elapsed time: 170 seconds
+selectCodeEditor("ForwardingUnit.v", 803, 146); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 329, 192); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// aj (ck): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_CANCEL, "Cancel"); // a (aj)
+// 'k' command handler elapsed time: 5 seconds
+selectCodeEditor("ForwardingUnit.v", 444, 145); // ce (w, ck)
+dismissDialog("Save Project"); // aj (ck)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("ForwardingUnit.v", 138, 232); // ce (w, ck)
+selectCodeEditor("ForwardingUnit.v", 195, 233); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("ForwardingUnit.v", 268, 209); // ce (w, ck)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u (O, ck) - Node
+// TclEventType: DG_ANALYSIS_MSG_RESET
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 17, false); // u (O, ck)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (ck):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (ck): Launch Runs: addNotify
+// TclEventType: DG_GRAPH_GENERATED
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (ck):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (ck)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// Tcl Message: [Wed Nov 28 13:27:06 2018] Launched synth_1... Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 3 seconds
+dismissDialog("Starting Design Runs"); // bx (ck)
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 274ms to process. Increasing delay to 2000 ms.

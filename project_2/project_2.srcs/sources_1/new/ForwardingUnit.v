@@ -74,6 +74,7 @@ module ForwardingUnit(IFID_Opcode, IFID_Rt, IFID_Rs, IDEX_Rs, IDEX_Rt, EXMEM_Rd,
             EX_FATemp = 2'b00;
             EX_FBTemp = 2'b00;
         end
+        
         if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rs) && (BranchFlag == 1)) // if opcode is a branch instruction
         begin
             ID_FATemp = 1'b1;
@@ -84,7 +85,11 @@ module ForwardingUnit(IFID_Opcode, IFID_Rt, IFID_Rs, IDEX_Rs, IDEX_Rt, EXMEM_Rd,
             ID_FATemp = 1'b0;
             ID_FBTemp = 1'b1;
         end
-        
+        else
+        begin
+            ID_FATemp = 1'b0;
+            ID_FBTemp = 1'b0;
+        end
     end
 	
     assign EX_ForwardA = EX_FATemp;

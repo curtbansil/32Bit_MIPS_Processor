@@ -3514,3 +3514,19 @@ set_property top TopModuleV2 [current_fileset]
 update_compile_order -fileset sources_1
 add_files -norecurse C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.srcs/sources_1/new/InstructionMemoryV2.v
 update_compile_order -fileset sources_1
+launch_runs impl_1 -jobs 2
+[Wed Nov 28 13:07:12 2018] Launched synth_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/runme.log
+[Wed Nov 28 13:07:13 2018] Launched impl_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Wed Nov 28 13:07:32 2018] Launched synth_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Wed Nov 28 13:09:28 2018] Launched impl_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Wed Nov 28 13:27:06 2018] Launched synth_1...
+Run output will be captured here: C:/Users/bcurt/Documents/GitHub/32Bit_MIPS_Processor/project_2/project_2.runs/synth_1/runme.log
