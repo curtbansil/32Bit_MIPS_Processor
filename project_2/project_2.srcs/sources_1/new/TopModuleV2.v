@@ -5,6 +5,8 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
     input Clk, Rst;
     
     output [31:0] HiReg, LoReg, WB_RegWD, IF_PCOut;
+    wire [31:0] index;
+    assign index = {2'b00, IF_PCOut[31:2]}; //makes it easier to read in simulation
     // Curt Bansil, Philippe Cutillas
     // Percent Effort: 50/50
     
@@ -94,7 +96,7 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
         WB_WriteReg, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl, ID_ForwardBControl);
         
     HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemRead, 
-                                          MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush);
+                                          MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite);
     
     // Muxes for jumps and branches
     
@@ -278,7 +280,7 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
     
     Mux32Bit4To1 StoreDataMux1(MEM_DataIn, MEM_WDMem, sh, sb, 32'h00000000, MEM_ByteControl);
     
-    DataMemory DataMem1(MEM_OutLSB, MEM_DataIn, Clk, MEM_MemWrite, MEM_MemRead, MEM_ReadDataM);
+    DataMemoryV2 DataMem1(MEM_OutLSB, MEM_DataIn, Clk, MEM_MemWrite, MEM_MemRead, MEM_ReadDataM);
     
     //----------------------------------------------------------
     //----------------------MEM/WB REG--------------------------
