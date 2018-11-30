@@ -95,8 +95,8 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
     ForwardingUnit ForwardUnit1(ID_Opcode, ID_RegRt, ID_RegRs, EX_RegRs, EX_RegRt, MEM_WriteReg, MEM_RegWrite,
         WB_WriteReg, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl, ID_ForwardBControl);
         
-    HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemRead, 
-                                          MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite, EX_WriteReg);
+    HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemtoReg, 
+                                          MEM_MemtoReg, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite, EX_WriteReg, EXMEM_Flush);
     
     // Muxes for jumps and branches
     
@@ -244,8 +244,6 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
     assign EX_RegWriteControl = EX_RegWriteMod & !(EX_HLWr & !EX_HLFlag);
     //----------------------------------------------------------
     //----------------------EX/MEM REG--------------------------
-    
-    assign EXMEM_Flush = 1'b0; //won't ever flush EX/MEM and MEM/WB regs so hardcode the flushes to 0
     
     // 32-bit outputs
     Reg32Bit EXMEM_ALUOutMSB1(MEM_ALUOutMSB, EX_ALUOutMSB, 1'b1, EXMEM_Flush, Clk);
