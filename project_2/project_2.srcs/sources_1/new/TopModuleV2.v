@@ -55,7 +55,7 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
     
     // EXMEM Reg Wires
     
-    wire EXMEM_Flush;
+    wire EXMEM_Flush, EXMEM_WrEn;
     
     // MEM Wires
     
@@ -92,11 +92,16 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
     
 //    BranchPredictor BP1(ID_Branch, ID_PCNext, PredictedAd);
     
-    ForwardingUnit ForwardUnit1(ID_Opcode, ID_RegRt, ID_RegRs, EX_RegRs, EX_RegRt, MEM_WriteReg, MEM_RegWrite,
-        WB_WriteReg, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl, ID_ForwardBControl);
+    ForwardingUnit ForwardUnit1(ID_Opcode, ID_RegRt, ID_RegRs, EX_RegRs,
+        EX_RegRt, MEM_WriteReg, MEM_RegWrite,WB_WriteReg, WB_RegWrite,
+        EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl,
+        ID_ForwardBControl);
         
-    HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemtoReg, 
-                                          MEM_MemtoReg, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite, EX_WriteReg, EXMEM_Flush);
+    HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function,
+        ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemRead, 
+        MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn,
+        IDEX_Flush, EX_RegWrite, EX_WriteReg, EXMEM_WrEn, EXMEM_Flush,
+        EX_MemtoReg, MEM_MemtoReg);
     
     // Muxes for jumps and branches
     
@@ -245,30 +250,33 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
     //----------------------------------------------------------
     //----------------------EX/MEM REG--------------------------
     
+    //assign EXMEM_Flush = 1'b0; //won't ever flush EX/MEM and MEM/WB regs so hardcode the flushes to 0
+    //assign EXMEM_Flush = 1'b0;
+    //assign EXMEM_WrEn = 1'b1;
     // 32-bit outputs
-    Reg32Bit EXMEM_ALUOutMSB1(MEM_ALUOutMSB, EX_ALUOutMSB, 1'b1, EXMEM_Flush, Clk);
-    Reg32Bit EXMEM_OutLSB1(MEM_OutLSB, EX_OutLSB, 1'b1, EXMEM_Flush, Clk);
-    Reg32Bit EXMEM_lui1(MEM_lui, EX_lui, 1'b1, EXMEM_Flush, Clk);
-    Reg32Bit EXMEM_RA1(MEM_RA, EX_RA, 1'b1, EXMEM_Flush, Clk);
-    Reg32Bit EXMEM_WDMem1(MEM_WDMem, EX_WDMem, 1'b1, EXMEM_Flush, Clk);
+    Reg32Bit EXMEM_ALUOutMSB1(MEM_ALUOutMSB, EX_ALUOutMSB, EXMEM_WrEn, EXMEM_Flush, Clk);
+    Reg32Bit EXMEM_OutLSB1(MEM_OutLSB, EX_OutLSB, EXMEM_WrEn, EXMEM_Flush, Clk);
+    Reg32Bit EXMEM_lui1(MEM_lui, EX_lui, EXMEM_WrEn, EXMEM_Flush, Clk);
+    Reg32Bit EXMEM_RA1(MEM_RA, EX_RA, EXMEM_WrEn, EXMEM_Flush, Clk);
+    Reg32Bit EXMEM_WDMem1(MEM_WDMem, EX_WDMem, EXMEM_WrEn, EXMEM_Flush, Clk);
     
     // 5-bit outputs
-    RegBit EXMEM_WriteReg4_1(MEM_WriteReg[4], EX_WriteRegM[4], 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_WriteReg3_1(MEM_WriteReg[3], EX_WriteRegM[3], 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_WriteReg2_1(MEM_WriteReg[2], EX_WriteRegM[2], 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_WriteReg1_1(MEM_WriteReg[1], EX_WriteRegM[1], 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_WriteReg0_1(MEM_WriteReg[0], EX_WriteRegM[0], 1'b1, EXMEM_Flush, Clk);
+    RegBit EXMEM_WriteReg4_1(MEM_WriteReg[4], EX_WriteRegM[4], EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_WriteReg3_1(MEM_WriteReg[3], EX_WriteRegM[3], EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_WriteReg2_1(MEM_WriteReg[2], EX_WriteRegM[2], EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_WriteReg1_1(MEM_WriteReg[1], EX_WriteRegM[1], EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_WriteReg0_1(MEM_WriteReg[0], EX_WriteRegM[0], EXMEM_WrEn, EXMEM_Flush, Clk);
     
     // 2-bit outputs
-    RegBit EXMEM_ByteControl1_1(MEM_ByteControl[1], EX_ByteControl[1], 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_ByteControl0_1(MEM_ByteControl[0], EX_ByteControl[0], 1'b1, EXMEM_Flush, Clk);
+    RegBit EXMEM_ByteControl1_1(MEM_ByteControl[1], EX_ByteControl[1], EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_ByteControl0_1(MEM_ByteControl[0], EX_ByteControl[0], EXMEM_WrEn, EXMEM_Flush, Clk);
      
     // 1-bit outputs
-    RegBit EXMEM_MemtoReg1(MEM_MemtoReg, EX_MemtoReg, 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_RegWr1(MEM_RegWrite, EX_RegWriteControl, 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_MemRd1(MEM_MemRead, EX_MemRead, 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_MemWr1(MEM_MemWrite, EX_MemWrite, 1'b1, EXMEM_Flush, Clk);
-    RegBit EXMEM_JALCtrl1(MEM_JALCtrl, EX_JALCtrl, 1'b1, EXMEM_Flush, Clk);
+    RegBit EXMEM_MemtoReg1(MEM_MemtoReg, EX_MemtoReg, EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_RegWr1(MEM_RegWrite, EX_RegWriteControl, EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_MemRd1(MEM_MemRead, EX_MemRead, EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_MemWr1(MEM_MemWrite, EX_MemWrite, EXMEM_WrEn, EXMEM_Flush, Clk);
+    RegBit EXMEM_JALCtrl1(MEM_JALCtrl, EX_JALCtrl, EXMEM_WrEn, EXMEM_Flush, Clk);
     
     //----------------------------------------------------------
     //-----------------------MEM STAGE--------------------------
