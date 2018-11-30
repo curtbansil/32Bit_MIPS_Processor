@@ -96,7 +96,7 @@ module TopModuleV2(Clk, Rst, HiReg, LoReg, WB_RegWD, IF_PCOut);
         WB_WriteReg, WB_RegWrite, EX_ForwardAControl, EX_ForwardBControl, ID_ForwardAControl, ID_ForwardBControl);
         
     HazardDetection HazardDetection1(ID_BranchC1, ID_Opcode, ID_Function, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemRead, 
-                                          MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite);
+                                          MEM_MemRead, IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite, EX_WriteReg);
     
     // Muxes for jumps and branches
     

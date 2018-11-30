@@ -57,8 +57,8 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
     input [31:0] WriteData;
     //output [31:0] debug_Reg8, debug_Reg16, debug_Reg17, debug_Reg18, debug_Reg19;
     
-    // TODO: Figure out if Rst is necessary
-    /*(* mark_debug = "true" *)*/ reg [31:0] RegFile [0:31];
+    reg [31:0] RegFile [0:31];
+    
     initial begin
         ReadData1 <= {32{1'b0}};
         ReadData2 <= {32{1'b0}};

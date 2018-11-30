@@ -13,11 +13,11 @@
 // FUNCTIONALITY:-
 ////////////////////////////////////////////////////////////////////////////////
 
-module HazardDetection(ID_BranchC1, ID_Opcode, ID_Func, ID_RegRs, ID_RegRt, EX_RegRt, MEM_RegRt, EX_MemRead, MEM_MemRead, IFID_WrEn,
-                         IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite);
+module HazardDetection(ID_BranchC1, ID_Opcode, ID_Func, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_MemRead, MEM_MemRead, IFID_WrEn,
+                         IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush, EX_RegWrite, EX_WriteReg);
 
     input ID_BranchC1, EX_MemRead, MEM_MemRead, EX_RegWrite;
-    input [4:0] ID_RegRs, ID_RegRt, EX_RegRt, MEM_RegRt;
+    input [4:0] ID_RegRs, ID_RegRt, EX_RegRt, EX_WriteReg, MEM_WriteReg;
     input [5:0] ID_Opcode, ID_Func;
     
     output reg IFID_WrEn, IF_PCWrite, IFID_Flush, IDEX_WrEn, IDEX_Flush;
@@ -30,9 +30,9 @@ module HazardDetection(ID_BranchC1, ID_Opcode, ID_Func, ID_RegRs, ID_RegRt, EX_R
         IDEX_Flush <= 1'b0;
     end
 	
-	always @(ID_BranchC1, EX_MemRead, MEM_MemRead, ID_RegRs, ID_RegRt, EX_RegRt, MEM_RegRt, ID_Opcode, ID_Func, EX_RegWrite) begin
+	always @(ID_BranchC1, EX_MemRead, MEM_MemRead, ID_RegRs, ID_RegRt, EX_RegRt, MEM_WriteReg, EX_WriteReg, ID_Opcode, ID_Func, EX_RegWrite) begin
 	
-		if (( EX_MemRead == 1 ) && (( EX_RegRt == ID_RegRs ) || ( EX_RegRt == ID_RegRt )) && ( IF_PCWrite == 1'b1 ) && ( IFID_WrEn == 1'b1 )) begin
+		if (( EX_MemRead == 1 ) && (( EX_WriteReg == ID_RegRs ) || ( EX_WriteReg == ID_RegRt )) && ( IF_PCWrite == 1'b1 ) && ( IFID_WrEn == 1'b1 )) begin
 			IFID_WrEn <= 1'b0;
 			IF_PCWrite <= 1'b0;
 			IFID_Flush <= 1'b0;
@@ -40,15 +40,15 @@ module HazardDetection(ID_BranchC1, ID_Opcode, ID_Func, ID_RegRs, ID_RegRt, EX_R
             IDEX_Flush <= 1'b0;
 		end 
 		
-		else if ((EX_RegWrite == 1) && (( EX_RegRt == ID_RegRs ) || ( EX_RegRt == ID_RegRt )) && ( IF_PCWrite == 1'b1 ) && ( IFID_WrEn == 1'b1 )) begin
+		else if ((EX_RegWrite == 1) && (( EX_WriteReg == ID_RegRs ) || ( EX_WriteReg == ID_RegRt ))&& ( IF_PCWrite == 1'b1 ) && ( IFID_WrEn == 1'b1 )) begin
             IFID_WrEn <= 1'b0;
             IF_PCWrite <= 1'b0;
             IFID_Flush <= 1'b0;
             IDEX_WrEn <= 1'b0;
-            IDEX_Flush <= 1'b0;
+            IDEX_Flush <= 1'b1;
         end 
         
-        else if (( MEM_MemRead == 1 ) && (( MEM_RegRt == ID_RegRt) || ( MEM_RegRt == ID_RegRs)) && ( ID_BranchC1 == 1'b1 ))
+        else if (( MEM_MemRead == 1 ) && (( MEM_WriteReg == ID_RegRt) || ( MEM_WriteReg == ID_RegRs)) && ( ID_BranchC1 == 1'b1 ))
         begin
             IF_PCWrite <= 1'b0;
             IFID_WrEn <= 1'b0;
