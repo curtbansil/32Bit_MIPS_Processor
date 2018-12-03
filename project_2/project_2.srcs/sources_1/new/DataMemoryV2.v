@@ -53,41 +53,7 @@ module DataMemoryV2(Address, WriteData, Clk, MemWrite, MemRead, ReadData);
     // TODO: Check if the above statement is correct
     initial begin
         ReadData <= 32'h00000000;
-    
-        memory[0] = 32'd100;
-        memory[1] = 32'd200;
-        memory[2] = 32'd300;
-        memory[3] = 32'd400;
-        memory[4] = 32'd500;
-        memory[5] = 32'd600;
-        memory[6] = 32'd700;
-        memory[7] = 32'd800;
-        memory[8] = 32'd900;
-        memory[9] = 32'd1000;
-        memory[10] = 32'd1100;
-        memory[11] = 32'd1200;
-        memory[12] = 32'h00000000;
-        memory[13] = 32'h00000000;
-        memory[14] = 32'h00000000;
-        memory[15] = 32'h00000000;
-        memory[16] = 32'h00000000;
-        memory[17] = 32'h00000000;
-        memory[18] = 32'h00000000;
-        memory[19] = 32'h00000000;
-        memory[20] = 32'h00000000;
-        memory[21] = 32'h00000000;
-        memory[22] = 32'h00000000;
-        memory[23] = 32'h00000000;
-        memory[24] = 32'h00000000;
-        memory[25] = 32'h00000000;
-        memory[26] = 32'h00000000;
-        memory[27] = 32'h00000000;
-        memory[28] = 32'h00000000;
-        memory[29] = 32'h00000000;
-        memory[30] = 32'h00000000;
-        memory[31] = 32'h00000000;
-        memory[32] = 32'h00000000;
-        
+        $readmemh ("data_memory.txt", memory);
     end
     
 	always @(posedge Clk) begin

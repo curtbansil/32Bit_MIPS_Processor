@@ -23,9 +23,10 @@
 module Top_tb();
 
     reg Clk, Rst;
-    wire [31:0] HiReg, LoReg, Reg_WriteData, PCResult;
+//    wire [31:0] HiReg, LoReg, Reg_WriteData, PCResult;
     
-    TopModuleFinal Top(Clk, Rst, HiReg, LoReg, Reg_WriteData, PCResult);
+//    TopModuleFinal Top(Clk, Rst, HiReg, LoReg, Reg_WriteData, PCResult);
+    Datapath_top Datapath1(Clk, Rst);
     
     initial begin
         Rst = 0;
