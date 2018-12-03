@@ -92,13 +92,13 @@ module DataMemoryV2(Address, WriteData, Clk, MemWrite, MemRead, ReadData);
     
 	always @(posedge Clk) begin
         if (MemWrite == 1'b1) begin
-            memory[Address[11:2]] <= WriteData;
+            memory[Address[8:2]] <= WriteData;
         end
     end    
     
     always @(*) begin
         if (MemRead == 1'b1) begin
-            ReadData <= memory[Address[11:2]];
+            ReadData <= memory[Address[8:2]];
         end
         else
             ReadData <= 32'h0;    
