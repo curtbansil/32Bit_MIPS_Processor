@@ -58,11 +58,13 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
     //output [31:0] debug_Reg8, debug_Reg16, debug_Reg17, debug_Reg18, debug_Reg19;
     
     reg [31:0] RegFile [0:31];
+    reg [31:0] temp;
     
     initial begin
         ReadData1 <= {32{1'b0}};
         ReadData2 <= {32{1'b0}};
-
+        
+        temp <= {32{1'b0}};
         RegFile[0] <= {32{1'b0}};
         RegFile[1] <= {32{1'b0}};
         RegFile[2] <= {32{1'b0}};
@@ -83,6 +85,7 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
         RegFile[17] <= {32{1'b0}};
         RegFile[18] <= {32{1'b0}};
         RegFile[19] <= {32{1'b0}};
+        RegFile[20] <= {32{1'b0}};
         RegFile[21] <= {32{1'b0}};
         RegFile[22] <= {32{1'b0}};
         RegFile[23] <= {32{1'b0}};
@@ -99,12 +102,25 @@ module RegisterFile(ReadRegister1, ReadRegister2, WriteRegister, WriteData, RegW
     always @(posedge Clk) begin
         if (RegWrite == 1) begin
             RegFile[WriteRegister] <= WriteData;
+            if ((ReadRegister1 == WriteRegister) || (ReadRegister2 == WriteRegister))
+            begin
+                temp <= WriteData;
+            end
         end
     end
      
     always @(negedge Clk) begin
-        ReadData1 <= RegFile[ReadRegister1];
-        ReadData2 <= RegFile[ReadRegister2];
+        if (ReadRegister1 == WriteRegister) begin
+            ReadData1 <= temp;
+        end else begin
+            ReadData1 <= RegFile[ReadRegister1];
+        end
+        
+        if (ReadRegister2 == WriteRegister) begin
+            ReadData2 <= temp;
+        end else begin
+            ReadData2 <= RegFile[ReadRegister2];
+        end
     end
     
     /*assign debug_Reg8 = RegFile[8];

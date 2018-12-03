@@ -38,58 +38,67 @@ module ForwardingUnit(IFID_Opcode, IFID_Rt, IFID_Rs, IDEX_Rs, IDEX_Rt, EXMEM_Rd,
     end
     
     // Checking if opcode == 0001xx or 000001, because those are the opcodes for the branch instructions
-    assign BranchFlag = ((!IFID_Opcode[5] & 1'b1) & (!IFID_Opcode[4] & 1'b1) & (!IFID_Opcode[3] & 1'b1) & (IFID_Opcode[2] & 1'b1))
-            | ((!IFID_Opcode[5] & 1'b1) & (!IFID_Opcode[4] & 1'b1) & (!IFID_Opcode[3] & 1'b1) & (!IFID_Opcode[2] & 1'b1) & (!IFID_Opcode[1] & 1'b1) & (IFID_Opcode[0] & 1'b1));
+//    assign BranchFlag = ((!IFID_Opcode[5] & 1'b1) & (!IFID_Opcode[4] & 1'b1) & (!IFID_Opcode[3] & 1'b1) & (IFID_Opcode[2] & 1'b1))
+//            | ((!IFID_Opcode[5] & 1'b1) & (!IFID_Opcode[4] & 1'b1) & (!IFID_Opcode[3] & 1'b1) & (!IFID_Opcode[2] & 1'b1) & (!IFID_Opcode[1] & 1'b1) & (IFID_Opcode[0] & 1'b1));
     
     always @(*)
     begin
         if((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IDEX_Rs))
         begin
             EX_FATemp = 2'b10;
-            EX_FBTemp = 2'b00;
         end 
         else if((MEMWB_RegWr == 1'b1) && (MEMWB_Rd != 5'b00000) && (MEMWB_Rd == IDEX_Rs)) 
         begin
             EX_FATemp = 2'b01;
-            EX_FBTemp = 2'b00;
         end
         else 
         begin
             EX_FATemp = 2'b00;
-            EX_FBTemp = 2'b00;
         end
         
         if((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IDEX_Rt)) 
         begin
-            EX_FATemp = 2'b00;
             EX_FBTemp = 2'b10;
         end 
         else if((MEMWB_RegWr == 1'b1) && (MEMWB_Rd != 5'b00000) && (MEMWB_Rd == IDEX_Rt)) 
         begin
-            EX_FATemp = 2'b00;
             EX_FBTemp = 2'b01;
         end
         else
         begin
-            EX_FATemp = 2'b00;
             EX_FBTemp = 2'b00;
         end
         
-        if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rs) && (BranchFlag == 1)) // if opcode is a branch instruction
+        if ((MEMWB_RegWr == 1'b1) && (MEMWB_Rd != 5'b00000) && (MEMWB_Rd == IFID_Rs))
         begin
             ID_FATemp = 1'b1;
-            ID_FBTemp = 1'b0;
-        end
-        else if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rt) && (BranchFlag == 1)) // if opcode is a branch instruction
-        begin
+        end else begin
             ID_FATemp = 1'b0;
+        end
+        
+        if ((MEMWB_RegWr == 1'b1) && (MEMWB_Rd != 5'b00000) && (MEMWB_Rd == IFID_Rt))
+        begin
             ID_FBTemp = 1'b1;
-        end
-        else
-        begin
-            ID_FATemp = 1'b0;
+        end else begin
             ID_FBTemp = 1'b0;
         end
+    
+        //repurposed these muxes
+//        if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rs) && (BranchFlag == 1)) // if opcode is a branch instruction
+//        begin
+//            ID_FATemp = 1'b1;
+//            ID_FBTemp = 1'b0;
+//        end
+//        else if ((EXMEM_RegWr == 1'b1) && (EXMEM_Rd != 5'b00000) && (EXMEM_Rd == IFID_Rt) && (BranchFlag == 1)) // if opcode is a branch instruction
+//        begin
+//            ID_FATemp = 1'b0;
+//            ID_FBTemp = 1'b1;
+//        end
+//        else
+//        begin
+//            ID_FATemp = 1'b0;
+//            ID_FBTemp = 1'b0;
+//        end
     end
 	
     assign EX_ForwardA = EX_FATemp;

@@ -22,19 +22,18 @@
 
 module D_FlipFlop(Out, In, Rst, Clk);
 
-    output Out;
+    output reg Out;
     input In, Rst, Clk;
-    reg Out; // Out holds its value
     
-    always @(posedge Clk or posedge Rst)
+    always @(posedge Clk)
     begin
         if (Rst)
         begin
-            Out = 0;
+            Out <= 0;
         end
         else
         begin
-            Out = In;
+            Out <= In;
         end
     end
 

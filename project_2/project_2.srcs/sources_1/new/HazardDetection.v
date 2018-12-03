@@ -48,61 +48,51 @@ module HazardDetection(ID_BranchC1, ID_Opcode, ID_Func, ID_RegRs, ID_RegRt,
 			IFID_WrEn_Temp = 1'b0;
 			IF_PCWrite_Temp = 1'b0;
 			IFID_Flush_Temp = 1'b0;
-            IDEX_WrEn_Temp = 1'b0;
-            IDEX_Flush_Temp = 1'b0;
+            IDEX_WrEn_Temp = 1'b1;
+            IDEX_Flush_Temp = 1'b1;
             EXMEM_WrEn_Temp = 1'b1;
             EXMEM_Flush_Temp = 1'b0;
-		end 
-		
-		else if ((EX_RegWrite == 1) && (( EX_WriteReg == ID_RegRs ) || ( EX_WriteReg == ID_RegRt ))&& ( IF_PCWrite_Temp == 1'b1 ) && ( IFID_WrEn_Temp == 1'b1 )) begin
-            IFID_WrEn_Temp = 1'b0;
-            IF_PCWrite_Temp = 1'b0;
-            IFID_Flush_Temp = 1'b0;
-            IDEX_WrEn_Temp = 1'b0;
-            IDEX_Flush_Temp = 1'b0;
-            EXMEM_WrEn_Temp = 1'b1;
-            EXMEM_Flush_Temp = 1'b0;
-        end 
+		end
         
         // lw followed by branch?
-        else if (( MEM_MemRead == 1 ) && (( MEM_WriteReg == ID_RegRt) || ( MEM_WriteReg == ID_RegRs)) && ( ID_BranchC1 == 1'b1 )&& ( IF_PCWrite_Temp == 1'b1 ) && ( IFID_WrEn_Temp == 1'b1 ))
-        begin
-            IF_PCWrite_Temp = 1'b0;
-            IFID_WrEn_Temp = 1'b0;
-            IFID_Flush_Temp = 1'b0;
-            IDEX_WrEn_Temp = 1'b0;
-            IDEX_Flush_Temp = 1'b1; 
-            EXMEM_WrEn_Temp = 1'b1;
-            EXMEM_Flush_Temp = 1'b0;
-		end
+//        else if (( MEM_MemRead == 1 ) && (( MEM_WriteReg == ID_RegRt) || ( MEM_WriteReg == ID_RegRs)) && ( ID_BranchC1 == 1'b1 )&& ( IF_PCWrite_Temp == 1'b1 ) && ( IFID_WrEn_Temp == 1'b1 ))
+//        begin
+//            IF_PCWrite_Temp = 1'b0;
+//            IFID_WrEn_Temp = 1'b0;
+//            IFID_Flush_Temp = 1'b0;
+//            IDEX_WrEn_Temp = 1'b0;
+//            IDEX_Flush_Temp = 1'b1; 
+//            EXMEM_WrEn_Temp = 1'b1;
+//            EXMEM_Flush_Temp = 1'b0;
+//		end
 		  
-        else if ((ID_BranchC1 && EX_RegWrite &&
-         (EX_WriteReg == ID_RegRs || EX_WriteReg == ID_RegRt)) ||
-          (ID_BranchC1 && MEM_MemtoReg && (MEM_WriteReg == ID_RegRs ||
-           MEM_WriteReg == ID_RegRt)) && ( IF_PCWrite_Temp == 1'b1 ) && ( IFID_WrEn_Temp == 1'b1 ))
-        // lw followed by branch?
-       begin
-            IF_PCWrite_Temp = 1'b0;
-            IFID_WrEn_Temp = 1'b0;
-            IFID_Flush_Temp = 1'b0;
-            IDEX_WrEn_Temp = 1'b0;
-            IDEX_Flush_Temp = 1'b0; 
-            EXMEM_WrEn_Temp = 1'b1;
-            EXMEM_Flush_Temp = 1'b1;
-		end
+//        else if ((ID_BranchC1 && EX_RegWrite &&
+//         (EX_WriteReg == ID_RegRs || EX_WriteReg == ID_RegRt)) ||
+//          (ID_BranchC1 && MEM_MemtoReg && (MEM_WriteReg == ID_RegRs ||
+//           MEM_WriteReg == ID_RegRt)) && ( IF_PCWrite_Temp == 1'b1 ) && ( IFID_WrEn_Temp == 1'b1 ))
+//        // lw followed by branch?
+//       begin
+//            IF_PCWrite_Temp = 1'b0;
+//            IFID_WrEn_Temp = 1'b0;
+//            IFID_Flush_Temp = 1'b0;
+//            IDEX_WrEn_Temp = 1'b0;
+//            IDEX_Flush_Temp = 1'b0; 
+//            EXMEM_WrEn_Temp = 1'b1;
+//            EXMEM_Flush_Temp = 1'b1;
+//		end
 		//Read after write
-		else if ((MEM_MemRead == 1) && (( MEM_WriteReg == ID_RegRt) ||
-		 ( MEM_WriteReg == ID_RegRs)) && ( IF_PCWrite_Temp == 1'b1 )
-		  && ( IFID_WrEn_Temp == 1'b1 ))
-		begin
-            IF_PCWrite_Temp = 1'b0;
-            IFID_WrEn_Temp = 1'b0;
-            IFID_Flush_Temp = 1'b0;
-            IDEX_WrEn_Temp = 1'b0;
-            IDEX_Flush_Temp = 1'b1; 
-            EXMEM_WrEn_Temp = 1'b1;
-            EXMEM_Flush_Temp = 1'b0;
-		end
+//		else if ((MEM_MemRead == 1) && (( MEM_WriteReg == ID_RegRt) ||
+//		 ( MEM_WriteReg == ID_RegRs)) && ( IF_PCWrite_Temp == 1'b1 )
+//		  && ( IFID_WrEn_Temp == 1'b1 ))
+//		begin
+//            IF_PCWrite_Temp = 1'b0;
+//            IFID_WrEn_Temp = 1'b0;
+//            IFID_Flush_Temp = 1'b0;
+//            IDEX_WrEn_Temp = 1'b0;
+//            IDEX_Flush_Temp = 1'b1; 
+//            EXMEM_WrEn_Temp = 1'b1;
+//            EXMEM_Flush_Temp = 1'b0;
+//		end
 		
 		else begin
 			IFID_WrEn_Temp = 1'b1;
