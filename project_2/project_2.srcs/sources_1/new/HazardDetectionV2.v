@@ -9,7 +9,7 @@ module HazardDetectionV2(ID_Opcode, ID_Func, ID_RegRs, ID_RegRt, EX_MemRead, EX_
     input EX_MemRead, ID_BranchC2, EX_RegWrite, MEM_RegWrite;
     output reg IF_PCWrite, IDEX_Flush, IFID_Flush, IFID_WrEn;
     
-    always @(ID_Opcode, ID_RegRs, ID_RegRt, EX_MemRead, MEM_WriteReg, EX_RegWrite, EX_RegRt, ID_BranchC2, EX_RegRd, MEM_RegWrite) begin
+    always @(ID_Opcode, ID_Func, ID_RegRs, ID_RegRt, EX_MemRead, MEM_WriteReg, EX_RegWrite, EX_RegRt, ID_BranchC2, EX_RegRd, MEM_RegWrite) begin
         
         //load-use dependency
         if (( EX_MemRead == 1'b1 ) && (( EX_RegRt == ID_RegRs ) || ( EX_RegRt == ID_RegRt )))

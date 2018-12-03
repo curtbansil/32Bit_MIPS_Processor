@@ -23,22 +23,14 @@
 module Top_tb();
 
     reg Clk, Rst;
+    wire [31:0] HiReg, LoReg, Reg_WriteData, PCResult;
     
-//    TopModuleV2 Top(Clk, Rst);
-    TopModuleFinal Top(Clk, Rst);
+    TopModuleFinal Top(Clk, Rst, HiReg, LoReg, Reg_WriteData, PCResult);
     
     initial begin
+        Rst = 0;
         Clk = 1;
         forever #50 Clk = ~Clk;
     end
-    
-    initial begin
-        #100;
-        Rst = 1;
-        #100;
-        Rst = 0;
-    end
-    
-    
 
 endmodule
